@@ -1,0 +1,1709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>300</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Rubik</family>
+    <pointsize>16</pointsize>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Calculator</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="files.qrc">
+    <normaloff>:/icons/icons/free-icon-calculator-7378252.png</normaloff>:/icons/icons/free-icon-calculator-7378252.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+	color: white;
+	background-color: rgb(18, 18, 18);
+	font-family: Rubik;
+	font-size: 16pt; 
+	font-weight: 600;
+}
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>300</width>
+     <height>500</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QLabel" name="history">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>33</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bahnschrift</family>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: gray;
+background-color: rgb(29, 29, 29);
+font-family: Bahnschrift;
+border-radius: 10px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="entry">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>83</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 40pt;
+background-color: rgb(30, 30, 30);
+border: none;
+border-radius: 20px;
+   </string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="maxLength">
+       <number>10</number>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="ButtonsGrid">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Rubik</family>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <layout class="QGridLayout" name="Buttons_Container_3" rowstretch="1,1,1,1,1" columnstretch="1,1,1,1,1">
+       <property name="leftMargin">
+        <number>5</number>
+       </property>
+       <property name="topMargin">
+        <number>5</number>
+       </property>
+       <property name="rightMargin">
+        <number>5</number>
+       </property>
+       <property name="bottomMargin">
+        <number>5</number>
+       </property>
+       <property name="spacing">
+        <number>5</number>
+       </property>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="Button_8">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #222;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+    background-color: #444;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #666;
+	border-bottom: 2px solid rgb(255, 255, 255);
+color: #Dff;
+}</string>
+         </property>
+         <property name="text">
+          <string>8</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>8</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="Button_7">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #222;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+    background-color: #444;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #666;
+	border-bottom: 2px solid rgb(255, 255, 255);
+color: #Dff;
+}</string>
+         </property>
+         <property name="text">
+          <string>7</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>7</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QPushButton" name="Button_6">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #222;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+    background-color: #444;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #666;
+	border-bottom: 2px solid rgb(255, 255, 255);
+color: #Dff;
+}</string>
+         </property>
+         <property name="text">
+          <string>6</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>6</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <widget class="QPushButton" name="Button_Power">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="mouseTracking">
+          <bool>true</bool>
+         </property>
+         <property name="tabletTracking">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #333333;
+	border-radius: 10px;
+color: #0094C6;
+}
+
+QPushButton:hover{
+    background-color: #666;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #888;
+	border-bottom: 2px solid rgb(255, 255, 255);
+	/*color: #333;*/
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="files.qrc">
+           <normaloff>:/icons/icons/power.png</normaloff>:/icons/icons/power.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="Button_3">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="sizeIncrement">
+          <size>
+           <width>2</width>
+           <height>2</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="mouseTracking">
+          <bool>true</bool>
+         </property>
+         <property name="tabletTracking">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #222;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+    background-color: #444;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #666;
+	border-bottom: 2px solid rgb(255, 255, 255);
+color: #Dff;
+}</string>
+         </property>
+         <property name="text">
+          <string>3</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>3</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QPushButton" name="Button_Divide">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="mouseTracking">
+          <bool>true</bool>
+         </property>
+         <property name="tabletTracking">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #333333;
+	border-radius: 10px;
+color: #0094C6;
+}
+
+QPushButton:hover{
+    background-color: #666;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #888;
+	border-bottom: 2px solid rgb(255, 255, 255);
+	color: #333;
+}</string>
+         </property>
+         <property name="text">
+          <string>÷</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>/</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="Button_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #222;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+    background-color: #444;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #666;
+	border-bottom: 2px solid rgb(255, 255, 255);
+color: #Dff;
+}</string>
+         </property>
+         <property name="text">
+          <string>2</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>2</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QPushButton" name="Button_Plus">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="mouseTracking">
+          <bool>true</bool>
+         </property>
+         <property name="tabletTracking">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #333333;
+	border-radius: 10px;
+color: #0094C6;
+}
+
+QPushButton:hover{
+    background-color: #666;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #888;
+	border-bottom: 2px solid rgb(255, 255, 255);
+	color: #333;
+}</string>
+         </property>
+         <property name="text">
+          <string>+</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>+</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QPushButton" name="Button_9">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #222;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+    background-color: #444;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #666;
+	border-bottom: 2px solid rgb(255, 255, 255);
+color: #Dff;
+}</string>
+         </property>
+         <property name="text">
+          <string>9</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>9</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="QPushButton" name="Button_Minus">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="mouseTracking">
+          <bool>true</bool>
+         </property>
+         <property name="tabletTracking">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #333333;
+	border-radius: 10px;
+color: #0094C6;
+}
+
+QPushButton:hover{
+    background-color: #666;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #888;
+	border-bottom: 2px solid rgb(255, 255, 255);
+	color: #333;
+}</string>
+         </property>
+         <property name="text">
+          <string>-</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>-</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="Button_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #222;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+    background-color: #444;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #666;
+	border-bottom: 2px solid rgb(255, 255, 255);
+color: #Dff;
+}</string>
+         </property>
+         <property name="text">
+          <string>4</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>4</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="4">
+        <widget class="QPushButton" name="Button_Factorial">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="mouseTracking">
+          <bool>true</bool>
+         </property>
+         <property name="tabletTracking">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #333333;
+	border-radius: 10px;
+color: #0094C6;
+}
+
+QPushButton:hover{
+    background-color: #666;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #888;
+	border-bottom: 2px solid rgb(255, 255, 255);
+	/*color: #333;*/
+}</string>
+         </property>
+         <property name="text">
+          <string>x!</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QPushButton" name="Button_Root">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="mouseTracking">
+          <bool>true</bool>
+         </property>
+         <property name="tabletTracking">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #333333;
+	border-radius: 10px;
+color: #0094C6;
+}
+
+QPushButton:hover{
+    background-color: #666;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #888;
+	border-bottom: 2px solid rgb(255, 255, 255);
+	/*color: #333;*/
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="files.qrc">
+           <normaloff>:/icons/icons/square-root-of-x-mathematical-signs.png</normaloff>:/icons/icons/square-root-of-x-mathematical-signs.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QPushButton" name="Button_Multiply">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="mouseTracking">
+          <bool>true</bool>
+         </property>
+         <property name="tabletTracking">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #333333;
+	border-radius: 10px;
+color: #0094C6;
+}
+
+QPushButton:hover{
+    background-color: #666;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #888;
+	border-bottom: 2px solid rgb(255, 255, 255);
+	color: #333;
+}</string>
+         </property>
+         <property name="text">
+          <string>×</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>*</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="Button_5">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #222;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+    background-color: #444;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #666;
+	border-bottom: 2px solid rgb(255, 255, 255);
+color: #Dff;
+}</string>
+         </property>
+         <property name="text">
+          <string>5</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>5</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="Button_ce">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #666;
+	border-radius: 10px;
+color: #333;
+}
+
+QPushButton:hover{
+    background-color: #999;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #bbb;
+	border-bottom: 2px solid rgb(255, 255, 255);
+	color: #121212
+}</string>
+         </property>
+         <property name="text">
+          <string>CE</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QPushButton" name="Button_Comma">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #222;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+    background-color: #444;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #666;
+	border-bottom: 2px solid rgb(255, 255, 255);
+color: #Dff;
+}</string>
+         </property>
+         <property name="text">
+          <string>,</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>.</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="4">
+        <widget class="QPushButton" name="Button_Equal">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="mouseTracking">
+          <bool>true</bool>
+         </property>
+         <property name="tabletTracking">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #08a;
+	border-radius: 10px;
+color: #333333;
+}
+
+QPushButton:hover{
+    background-color: #0ac;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #0cf;
+	border-bottom: 2px solid rgb(255, 255, 255);
+	color: #fff;
+}</string>
+         </property>
+         <property name="text">
+          <string>=</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>Return</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="Button_c">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #666;
+	border-radius: 10px;
+	color: #333;
+}
+
+QPushButton:hover{
+    background-color: #999;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #bbb;
+	border-bottom: 2px solid rgb(255, 255, 255);
+	color: #121212
+}</string>
+         </property>
+         <property name="text">
+          <string>C</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="QPushButton" name="Button_0">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="sizeIncrement">
+          <size>
+           <width>1</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="toolTipDuration">
+          <number>-1</number>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #222;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+    background-color: #444;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #666;
+	border-bottom: 2px solid rgb(255, 255, 255);
+color: #Dff;
+}</string>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>0</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="Button_Sign">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #666;
+	border-radius: 10px;
+color: #333;
+}
+
+QPushButton:hover{
+    background-color: #999;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #bbb;
+	border-bottom: 2px solid rgb(255, 255, 255);
+	color: #121212
+}</string>
+         </property>
+         <property name="text">
+          <string>±</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3" colspan="2">
+        <widget class="QPushButton" name="Button_backspace">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #333333;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+    background-color: #666;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #888;
+	border-bottom: 2px solid rgb(255, 255, 255);
+	color: #Dff;
+}
+
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="files.qrc">
+           <normaloff>:/icons/icons/outline_backspace_white_24dp.png</normaloff>:/icons/icons/outline_backspace_white_24dp.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>Backspace</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="Button_1">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="sizeIncrement">
+          <size>
+           <width>2</width>
+           <height>2</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Rubik</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="mouseTracking">
+          <bool>true</bool>
+         </property>
+         <property name="tabletTracking">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+    border-bottom: 2px solid rgb(0, 148, 198);
+    border-left: 1rem solid rgb(0, 0, 0);
+    border-top: none;
+    border-right: none;
+width: 5px;
+    color: #FFF;
+    background-color: #222;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+    background-color: #444;
+	border-bottom: 2px solid rgb(128, 128, 128);
+}
+
+QPushButton:pressed{
+    background-color: #666;
+	border-bottom: 2px solid rgb(255, 255, 255);
+color: #Dff;
+}</string>
+         </property>
+         <property name="text">
+          <string>1</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>105</width>
+           <height>105</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>1</string>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="files.qrc"/>
+ </resources>
+ <connections/>
+</ui>
