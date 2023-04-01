@@ -22,7 +22,7 @@
    <string>Calculator</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="files.qrc">
+   <iconset resource="../../../calc/files.qrc">
     <normaloff>:/icons/icons/free-icon-calculator-7378252.png</normaloff>:/icons/icons/free-icon-calculator-7378252.png</iconset>
   </property>
   <property name="styleSheet">
@@ -55,10 +55,16 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>33</height>
+       </size>
+      </property>
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>33</height>
+        <height>16777215</height>
        </size>
       </property>
       <property name="font">
@@ -90,6 +96,12 @@ border-radius: 10px;</string>
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>83</height>
+       </size>
       </property>
       <property name="maximumSize">
        <size>
@@ -399,7 +411,7 @@ QPushButton:pressed{
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="files.qrc">
+          <iconset resource="../../../calc/files.qrc">
            <normaloff>:/icons/icons/power.png</normaloff>:/icons/icons/power.png</iconset>
          </property>
          <property name="iconSize">
@@ -1043,7 +1055,7 @@ QPushButton:pressed{
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="files.qrc">
+          <iconset resource="../../../calc/files.qrc">
            <normaloff>:/icons/icons/square-root-of-x-mathematical-signs.png</normaloff>:/icons/icons/square-root-of-x-mathematical-signs.png</iconset>
          </property>
          <property name="iconSize">
@@ -1599,7 +1611,7 @@ QPushButton:pressed{
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="files.qrc">
+          <iconset resource="../../../calc/files.qrc">
            <normaloff>:/icons/icons/outline_backspace_white_24dp.png</normaloff>:/icons/icons/outline_backspace_white_24dp.png</iconset>
          </property>
          <property name="iconSize">
@@ -1703,7 +1715,7 @@ color: #Dff;
   </widget>
  </widget>
  <resources>
-  <include location="files.qrc"/>
+  <include location="../../../calc/files.qrc"/>
  </resources>
  <connections/>
 </ui>
