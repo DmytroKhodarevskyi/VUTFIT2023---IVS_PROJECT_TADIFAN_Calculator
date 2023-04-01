@@ -1,19 +1,21 @@
-Prostredi
+Distribution
 ---------
 
 Ubuntu 64bit
 Windows 64bit
 
-Autori
+Authors
 ------
 
 Nazev tymu
-- xlogin01 jmeno prijmeni 
-- xlogin02 jmeno prijmeni 
-- xlogin03 jmeno prijmeni 
-- xlogin04 jmeno prijmeni 
+- xkhoda01 Dmytro Khodarevskyi 
+- xtrifo00 Dmytro Trifonov
+- xchern08 Denys Chernenko 
+- xhryny00 Yaroslav Hryn 
 
 Licence
 -------
 
-Tento program je poskytovan...
+This project is licensed under the terms of the GPL v3 license.
+
+
