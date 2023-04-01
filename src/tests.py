@@ -22,7 +22,6 @@ class MyTestGUI(unittest.TestCase):
         self.calculator.close()
 
     def test_write_numbers(self):
-
         # Checking that all numbers is working
         self.calculator.add_number("0")
         self.calculator.add_number("1")
@@ -62,27 +61,30 @@ class MyTestGUI(unittest.TestCase):
         self.assertEqual(self.calculator.ui.entry.text(), "159")
         self.calculator.clear_all()
 
-
     def test_for_clear_functions(self):
+        # Checking clear_all function
         self.calculator.add_number("1")
         self.calculator.add_number("5")
         self.calculator.add_number("9")
         self.calculator.clear_all()
         self.assertEqual(self.calculator.ui.entry.text(), "0")
+
+        # Checking clear_entry function
         self.calculator.add_number("2")
         self.calculator.add_number("5")
-        self.calculator.calculate()
         self.assertEqual(self.calculator.ui.entry.text(), "25")
+        self.calculator.clear_entry()
+        self.assertEqual(self.calculator.ui.entry.text(), "0")
 
-
-
-
-
-
-
+        # Checking clear_all with operators
+        self.calculator.add_number("5")
+        self.calculator.add_number("5")
+        self.calculator.add_history(" + ")
+        self.assertEqual(self.calculator.ui.history.text(), "55 + ")
+        self.calculator.clear_all()
+        self.assertEqual(self.calculator.ui.history.text(), "")
 
     def test_writing_point(self):
-
         # Checking the point , with starting zero
         self.calculator.add_point()
         self.assertEqual(self.calculator.ui.entry.text(), "0.")
@@ -105,9 +107,7 @@ class MyTestGUI(unittest.TestCase):
         self.assertEqual(self.calculator.ui.entry.text(), "0.558")
         self.calculator.clear_all()
 
-
     def test_with_points_in_history(self):
-
         # Add number with point to history and check if it is correct
         self.calculator.add_number("1")
         self.calculator.add_point()
@@ -125,3 +125,4 @@ class MyTestGUI(unittest.TestCase):
 
         # Check if the expression in the history is correct
         self.assertEqual(self.calculator.ui.history.text(), "1.5 + 2.5 =")
+        self.calculator.clear_all()
