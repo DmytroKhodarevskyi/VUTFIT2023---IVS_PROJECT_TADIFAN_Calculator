@@ -52,8 +52,8 @@ class Calculator(QMainWindow):
             self.ui.entry.setText(self.ui.entry.text() + Button_text)
 
     def add_point(self) -> None:
-        if '.' not in self.ui.entry.text():
-            self.ui.entry.setText(self.ui.entry.text() + '.')
+        if ',' not in self.ui.entry.text():
+            self.ui.entry.setText(self.ui.entry.text() + ',')
 
     def clear_all(self) -> None:
         self.ui.entry.setText("0")
@@ -64,25 +64,34 @@ class Calculator(QMainWindow):
 
     def add_history(self, math_sign: str) -> None:
        if not self.ui.history.text():
-           self.ui.history.setText(self.remove_trailing_zeroes(self.ui.entry.text()) + f'{math_sign}')
+           history = self.remove_trailing_zeroes(self.ui.entry.text()) + f'{math_sign}'
+           history = history.replace(".", ",")
+           self.ui.history.setText(history)
            self.ui.entry.setText("0")
 
     @staticmethod
     def remove_trailing_zeroes(number: str) -> str:
-        n = str(float(number))
+        n = str(number)
+        n = n.replace(",", ".")
+        n = str(float(n))
+
         return n[:-2] if n.endswith('.0') else n
 
     def get_entry_number(self) -> Union[int, float]:
-        entry = self.ui.entry.text().strip('.')
+        entry = self.ui.entry.text().strip(',')
+        entry = entry.replace(",", ".")
+        print(entry)
         return float(entry) if '.' in entry else int(entry)
 
     def get_history_number(self) -> Union[int, float, None]:
-        history = self.ui.history.text().strip('.').split()[0]
+        history = self.ui.history.text().strip(',').split()[0]
+        history = history.replace(",", ".")
+        print(history)
         return float(history) if '.' in history else int(history)
 
     def get_history_sign(self) -> Optional[str]:
         if self.ui.history.text():
-            return self.ui.history.text().strip('.').split()[-1]
+            return self.ui.history.text().strip(',').split()[-1]
 
 
     def calculate(self) -> Optional[str]:
@@ -93,7 +102,10 @@ class Calculator(QMainWindow):
             result = self.remove_trailing_zeroes(
                 str(operations[self.get_history_sign()](self.get_history_number(), self.get_entry_number()))
             )
-            self.ui.history.setText(temp + self.remove_trailing_zeroes(entry) + " =")
+            result = result.replace(".", ",")
+            history = temp + self.remove_trailing_zeroes(entry) + " ="
+            history = history.replace(".", ",")
+            self.ui.history.setText(history)
             self.ui.entry.setText(result)
             return result
 
