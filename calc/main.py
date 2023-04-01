@@ -7,6 +7,14 @@ from typing import Union, Optional
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtGui import QFontDatabase
 from Newdesign import Ui_MainWindow
+from operator import add, sub, mul, truediv
+
+operations = {
+    "+": add,
+    "-": sub,
+    "*": mul,
+    "/": truediv
+}
 
 class Calculator(QMainWindow):
     def __init__(self):
@@ -34,7 +42,8 @@ class Calculator(QMainWindow):
         self.ui.Button_Comma.clicked.connect(self.add_point)
 
         #math
-        self.ui.Button_Plus.clicked.connect(lambda: self.add_history("+"))
+        self.ui.Button_Equal.clicked.connect(self.calculate)
+        self.ui.Button_Plus.clicked.connect(lambda: self.add_history(" + "))
 
     def add_number(self, Button_text: str) -> None:
         if self.ui.entry.text() == "0":
@@ -43,7 +52,7 @@ class Calculator(QMainWindow):
             self.ui.entry.setText(self.ui.entry.text() + Button_text)
 
     def add_point(self) -> None:
-        if ',' not in self.ui.entry.text():
+        if '.' not in self.ui.entry.text():
             self.ui.entry.setText(self.ui.entry.text() + '.')
 
     def clear_all(self) -> None:
@@ -63,9 +72,30 @@ class Calculator(QMainWindow):
         n = str(float(number))
         return n[:-2] if n.endswith('.0') else n
 
-    def get_entry_number(self) -> float:
+    def get_entry_number(self) -> Union[int, float]:
         entry = self.ui.entry.text().strip('.')
         return float(entry) if '.' in entry else int(entry)
+
+    def get_history_number(self) -> Union[int, float, None]:
+        history = self.ui.history.text().strip('.').split()[0]
+        return float(history) if '.' in history else int(history)
+
+    def get_history_sign(self) -> Optional[str]:
+        if self.ui.history.text():
+            return self.ui.history.text().strip('.').split()[-1]
+
+
+    def calculate(self) -> Optional[str]:
+        entry = self.ui.entry.text()
+        temp = self.ui.history.text()
+
+        if temp:
+            result = self.remove_trailing_zeroes(
+                str(operations[self.get_history_sign()](self.get_history_number(), self.get_entry_number()))
+            )
+            self.ui.history.setText(temp + self.remove_trailing_zeroes(entry) + " =")
+            self.ui.entry.setText(result)
+            return result
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
