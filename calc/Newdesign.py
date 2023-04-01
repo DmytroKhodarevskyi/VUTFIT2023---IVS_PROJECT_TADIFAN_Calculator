@@ -55,7 +55,8 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.history.sizePolicy().hasHeightForWidth())
         self.history.setSizePolicy(sizePolicy)
-        self.history.setMaximumSize(QSize(16777215, 33))
+        self.history.setMinimumSize(QSize(0, 33))
+        self.history.setMaximumSize(QSize(16777215, 16777215))
         font1 = QFont()
         font1.setFamilies([u"Bahnschrift"])
         font1.setPointSize(16)
@@ -73,6 +74,7 @@ class Ui_MainWindow(object):
         self.entry.setObjectName(u"entry")
         sizePolicy.setHeightForWidth(self.entry.sizePolicy().hasHeightForWidth())
         self.entry.setSizePolicy(sizePolicy)
+        self.entry.setMinimumSize(QSize(0, 83))
         self.entry.setMaximumSize(QSize(16777215, 83))
         self.entry.setStyleSheet(u"font-size: 40pt;\n"
 "background-color: rgb(30, 30, 30);\n"
@@ -982,7 +984,7 @@ class Ui_MainWindow(object):
         self.Button_5.setShortcut(QCoreApplication.translate("MainWindow", u"5", None))
 #endif // QT_CONFIG(shortcut)
         self.Button_ce.setText(QCoreApplication.translate("MainWindow", u"CE", None))
-        self.Button_Comma.setText(QCoreApplication.translate("MainWindow", u".", None))
+        self.Button_Comma.setText(QCoreApplication.translate("MainWindow", u",", None))
 #if QT_CONFIG(shortcut)
         self.Button_Comma.setShortcut(QCoreApplication.translate("MainWindow", u".", None))
 #endif // QT_CONFIG(shortcut)
