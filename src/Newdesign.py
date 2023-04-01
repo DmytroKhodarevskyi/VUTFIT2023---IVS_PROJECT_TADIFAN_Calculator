@@ -65,7 +65,7 @@ class Ui_MainWindow(object):
         self.history.setStyleSheet(u"color: gray;\n"
 "background-color: rgb(29, 29, 29);\n"
 "font-family: Bahnschrift;\n"
-"border-radius: 10px;")
+"border-radius: 5px;")
         self.history.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.verticalLayout_2.addWidget(self.history)
@@ -79,7 +79,7 @@ class Ui_MainWindow(object):
         self.entry.setStyleSheet(u"font-size: 40pt;\n"
 "background-color: rgb(30, 30, 30);\n"
 "border: none;\n"
-"border-radius: 20px;\n"
+"border-radius: 10px;\n"
 "   ")
         self.entry.setMaxLength(10)
         self.entry.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
