@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/free-icon-calculator-7378252.png</file>
+    <file>icons/outline_backspace_white_24dp.png</file>
+    <file>icons/power.png</file>
+    <file>icons/square-root-of-x-mathematical-signs.png</file>
+  </qresource>
+</RCC>
