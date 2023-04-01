@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="35f06de6-7875-4d41-b4ab-547b56de8366" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,5 +53,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/IVS2_PROJECT_TADIFAN$Newdesign.coverage" NAME="Newdesign Coverage Results" MODIFIED="1680364966926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/calc" />
+    <SUITE FILE_PATH="coverage/IVS2_PROJECT_TADIFAN$main.coverage" NAME="main Coverage Results" MODIFIED="1680373102846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/calc" />
   </component>
 </project>
