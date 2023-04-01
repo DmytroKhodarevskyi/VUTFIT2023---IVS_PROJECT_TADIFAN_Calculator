@@ -71,7 +71,6 @@ class Calculator(QMainWindow):
 
     @staticmethod
     def remove_trailing_zeroes(number: str) -> str:
-
         n = str(number)
         n = n.replace(",", ".")
         n = str(float(n))
