@@ -7,7 +7,7 @@ Windows 64bit
 Authors
 ------
 
-Nazev tymu
+TadiFan
 - xkhoda01 Dmytro Khodarevskyi 
 - xtrifo00 Dmytro Trifonov
 - xchern08 Denys Chernenko 
