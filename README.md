@@ -16,6 +16,6 @@ Nazev tymu
 Licence
 -------
 
-This project is licensed under the terms of the GPL v3 license.
+This project is licensed under the terms of the [GNU General Public License v3.0](LICENSE).
 
 
