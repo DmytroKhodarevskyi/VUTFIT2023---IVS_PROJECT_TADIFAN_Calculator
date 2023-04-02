@@ -53,10 +53,10 @@ class Calculator(QMainWindow):
 
         #math
         self.ui.Button_Equal.clicked.connect(self.calculate)
-        self.ui.Button_Plus.clicked.connect(lambda: self.math_operation(' + '))
-        self.ui.Button_Minus.clicked.connect(lambda: self.math_operation(' - '))
-        self.ui.Button_Multiply.clicked.connect(lambda: self.math_operation(' × '))
-        self.ui.Button_Divide.clicked.connect(lambda: self.math_operation(' ÷ '))
+        self.ui.Button_Plus.clicked.connect(lambda: self.math_operation(' +'))
+        self.ui.Button_Minus.clicked.connect(lambda: self.math_operation(' -'))
+        self.ui.Button_Multiply.clicked.connect(lambda: self.math_operation(' ×'))
+        self.ui.Button_Divide.clicked.connect(lambda: self.math_operation(' ÷'))
 
     def add_number(self, Button_text: str) -> None:
         self.remove_error()
@@ -167,7 +167,7 @@ class Calculator(QMainWindow):
                     str(operations[self.get_history_sign()](self.get_history_number(), self.get_entry_number()))
                 )
                 result = result.replace(".", ",")
-                history = temp + self.remove_trailing_zeroes(entry) + " ="
+                history = temp + " " + self.remove_trailing_zeroes(entry) + " ="
                 history = history.replace(".", ",")
                 self.ui.history.setText(history)
                 self.ui.entry.setText(result)
