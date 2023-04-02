@@ -1,5 +1,8 @@
 .idea/
 
+# Idea files
+*.xml
+
 # Compiled Object files
 *.slo
 *.lo
