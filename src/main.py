@@ -8,6 +8,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtGui import QFontDatabase
 from Newdesign import Ui_MainWindow
 from operator import add, sub, mul, truediv
+import keyboard
 
 operations = {
     "+": add,
@@ -24,7 +25,11 @@ default_font_size = 16
 default_entry_font_size = 40
 
 class Calculator(QMainWindow):
+
+
+
     def __init__(self):
+        self.keyboard_hook = None
         super(Calculator,self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -58,9 +63,60 @@ class Calculator(QMainWindow):
         self.ui.Button_Multiply.clicked.connect(lambda: self.math_operation(' ×'))
         self.ui.Button_Divide.clicked.connect(lambda: self.math_operation(' ÷'))
 
+    def print_key_event(self, event) -> None:
+        # print(event.name)
+        if event.name == '0':
+            self.ui.Button_0.click()
+        elif event.name == '1':
+            self.ui.Button_1.click()
+        elif event.name == '2':
+            self.ui.Button_2.click()
+        elif event.name == '3':
+            self.ui.Button_3.click()
+        elif event.name == '4':
+            self.ui.Button_4.click()
+        elif event.name == '5':
+            self.ui.Button_5.click()
+        elif event.name == '6':
+            self.ui.Button_6.click()
+        elif event.name == '7':
+            self.ui.Button_7.click()
+        elif event.name == '8':
+            self.ui.Button_8.click()
+        elif event.name == '9':
+            self.ui.Button_9.click()
+        elif event.name == 'enter':
+            self.ui.Button_Equal.click()
+        elif event.name == 'backspace':
+            self.ui.Button_backspace.click()
+        elif event.name == 'delete':
+            self.ui.Button_c.click()
+        elif event.name == '.':
+            self.ui.Button_Comma.click()
+        elif event.name == '+':
+            print('plus pressed')
+            self.ui.Button_Plus.click()
+        elif event.name == '-':
+            self.ui.Button_Minus.click()
+        elif event.name == '*':
+            self.ui.Button_Multiply.click()
+        elif event.name == '/':
+            self.ui.Button_Divide.click()
+
+
+    # keyboard.on_press(lambda event: self.print_key_event(event))
+
+    # def register_keyboard_event(self):
+    #     self.keyboard_hook = keyboard.hook(self.print_key_event)
+    #
+    # def unregister_keyboard_event(self):
+    #     keyboard.unhook(self.keyboard_hook)
+    def register_keyboard_event(self):
+        keyboard.on_press(lambda event: self.print_key_event(event))
+
     def add_number(self, Button_text: str) -> None:
-        self.remove_error()
-        self.clear_history_if_equality()
+        # self.remove_error()
+        # self.clear_history_if_equality()
         if self.ui.entry.text() == "0":
             self.ui.entry.setText(Button_text)
         else:
@@ -271,9 +327,13 @@ class Calculator(QMainWindow):
     def resizeEvent(self, event) -> None:
         self.adjust_entry_font_size()
 
+# calc = Calculator()
+# calc.register_keyboard_event()
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = Calculator()
     window.show()
+    window.register_keyboard_event()
     sys.exit(app.exec())
 
