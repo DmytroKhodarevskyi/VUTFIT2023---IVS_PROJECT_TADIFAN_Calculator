@@ -81,7 +81,7 @@ class Ui_MainWindow(object):
 "border: none;\n"
 "border-radius: 10px;\n"
 "   ")
-        self.entry.setMaxLength(10)
+        self.entry.setMaxLength(16)
         self.entry.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
         self.entry.setReadOnly(True)
 
