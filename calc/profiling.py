@@ -1,6 +1,6 @@
 import Calc_Library
 import sys
-
+import os
 
 def samplemean(numbers):
     return summs(numbers) / len(numbers)
@@ -21,7 +21,11 @@ def stddev(numbers):
         s = Calc_Library.SquareRoot(befsq)
         return s
 
+
+cwd = os.getcwd()
+file_path = os.path.join(cwd, 'prof')
 numbers = []
 for line in sys.stdin:
      numbers.extend(map(float, line.strip().split()))
-     print(stddev(numbers))
+     with open(file_path, 'w') as f:
+         f.write("Input :\n" + str(numbers) + "\n" + "s(Standard deviation) =\t" + str(stddev(numbers)))
