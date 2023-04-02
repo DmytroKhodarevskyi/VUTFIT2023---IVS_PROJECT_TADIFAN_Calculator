@@ -14,7 +14,7 @@ from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
 from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
+    QPalette, QPixmap, QRadialGradient, QTransform, QShortcut)
 from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QVBoxLayout, QWidget)
@@ -65,7 +65,7 @@ class Ui_MainWindow(object):
         self.history.setStyleSheet(u"color: gray;\n"
 "background-color: rgb(29, 29, 29);\n"
 "font-family: Bahnschrift;\n"
-"border-radius: 10px;")
+"border-radius: 5px;")
         self.history.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.verticalLayout_2.addWidget(self.history)
@@ -79,9 +79,9 @@ class Ui_MainWindow(object):
         self.entry.setStyleSheet(u"font-size: 40pt;\n"
 "background-color: rgb(30, 30, 30);\n"
 "border: none;\n"
-"border-radius: 20px;\n"
+"border-radius: 10px;\n"
 "   ")
-        self.entry.setMaxLength(10)
+        self.entry.setMaxLength(16)
         self.entry.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
         self.entry.setReadOnly(True)
 
@@ -986,11 +986,17 @@ class Ui_MainWindow(object):
         self.Button_ce.setText(QCoreApplication.translate("MainWindow", u"CE", None))
         self.Button_Comma.setText(QCoreApplication.translate("MainWindow", u",", None))
 #if QT_CONFIG(shortcut)
-        self.Button_Comma.setShortcut(QCoreApplication.translate("MainWindow", u".", None))
+
+        for sc in (',', '.'):
+            QShortcut(sc, self.Button_Comma).activated.connect(self.Button_Comma.animateClick)
+
 #endif // QT_CONFIG(shortcut)
         self.Button_Equal.setText(QCoreApplication.translate("MainWindow", u"=", None))
 #if QT_CONFIG(shortcut)
-        self.Button_Equal.setShortcut(QCoreApplication.translate("MainWindow", u"Return", None))
+
+        for sc in ('=', 'Enter', 'Return'):
+                QShortcut(sc, self.Button_Equal).activated.connect(self.Button_Equal.animateClick)
+
 #endif // QT_CONFIG(shortcut)
         self.Button_c.setText(QCoreApplication.translate("MainWindow", u"C", None))
         self.Button_0.setText(QCoreApplication.translate("MainWindow", u"0", None))
