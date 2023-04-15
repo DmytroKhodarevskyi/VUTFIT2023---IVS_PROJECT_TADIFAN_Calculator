@@ -1,10 +1,10 @@
-import Calc_Library
+from IVS2_PROJECT_TADIFAN.src import Calc_Library
 import sys
 import os
-
+import cProfile
+import pstats
 def samplemean(numbers):
     return summs(numbers) / len(numbers)
-
 def summs(numbers):
     summ = 0
     for n in numbers:
@@ -21,11 +21,16 @@ def stddev(numbers):
         s = Calc_Library.SquareRoot(befsq)
         return s
 
+def main():
+ numbers = []
+ for line in sys.stdin:
+    numbers.extend(map(float, line.strip().split()))
+    result = stddev(numbers)
+    print(result)
 
-cwd = os.getcwd()
-file_path = os.path.join(cwd, 'prof')
-numbers = []
-for line in sys.stdin:
-     numbers.extend(map(float, line.strip().split()))
-     with open(file_path, 'w') as f:
-         f.write("Input :\n" + str(numbers) + "\n" + "s(Standard deviation) =\t" + str(stddev(numbers)))
+if __name__ == '__main__':
+    cwd = os.getcwd()
+    file_path = os.path.join(cwd, 'profile_stats')
+    cProfile.run('main()', file_path)
+    stats = pstats.Stats("profile_stats")
+    stats.sort_stats("tottime").print_stats()
