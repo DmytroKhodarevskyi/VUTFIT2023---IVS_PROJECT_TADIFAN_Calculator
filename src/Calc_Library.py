@@ -13,24 +13,35 @@ def Power(n, p):
 
 def Plus(n, p):
     x = n + p
-    if not x.is_integer():
-        round(x, 2)
+    num_str = str(x)
+    num_digits = len(num_str)
+    if num_digits > 8:
+        x = round(x, 3)
     return x
-    # return n + p
 
 def Minus(n, p):
     x = n - p
-    if not x.is_integer():
-        num_str = str(x)
-        num_digits = len(num_str)
-        if num_digits > 8:
-            x = round(x, 2)
+    # if not x.is_integer():
+    num_str = str(x)
+    num_digits = len(num_str)
+    if num_digits > 8:
+        x = round(x, 3)
     return x
 
 def Multiply(n, p):
-    return n * p
+    x = n * p
+    num_str = str(x)
+    num_digits = len(num_str)
+    if num_digits > 8:
+        x = round(x, 3)
+    return x
 
 def Divide(n, p):
-    return n / p
+    x = n / p
+    num_str = str(x)
+    num_digits = len(num_str)
+    if num_digits > 8:
+        x = round(x, 16)
+    return x
 
 

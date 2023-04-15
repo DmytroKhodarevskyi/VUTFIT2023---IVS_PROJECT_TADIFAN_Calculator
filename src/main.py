@@ -10,6 +10,7 @@ from Newdesign import Ui_MainWindow
 from operator import add, sub, mul, truediv
 import keyboard
 import Calc_Library as cl
+import time
 
 operations = {
     "+": cl.Plus,
@@ -19,6 +20,11 @@ operations = {
     "×": cl.Multiply,
     "÷": cl.Divide,
 }
+
+
+
+
+
 
 error_zero_division = "You can't divide by zero!"
 error_undifined = "Undefined!"
@@ -35,6 +41,9 @@ class Calculator(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.entry_max_length = self.ui.entry.maxLength()
+
+        self.unpressed = self.ui.Button_1.styleSheet()
+
         self.style_sheet_for_enable = self.ui.Button_Divide.styleSheet()
         QFontDatabase.addApplicationFont("Rubik\static\Rubik-Bold.ttf")
 
@@ -58,14 +67,30 @@ class Calculator(QMainWindow):
         self.ui.Button_Sign.clicked.connect(self.change_sign)
 
         #math
-        self.ui.Button_Equal.clicked.connect(self.calculate)
+        self.ui.Button_Equal.clicked.connect(self.binary_calculate)
         self.ui.Button_Plus.clicked.connect(lambda: self.math_operation(' +'))
         self.ui.Button_Minus.clicked.connect(lambda: self.math_operation(' -'))
         self.ui.Button_Multiply.clicked.connect(lambda: self.math_operation(' ×'))
         self.ui.Button_Divide.clicked.connect(lambda: self.math_operation(' ÷'))
+        self.ui.Button_Root.clicked.connect(lambda: self.math_operation(' √'))
+        self.ui.Button_Power.clicked.connect(lambda: self.math_operation(' ^'))
+        self.ui.Button_Factorial.clicked.connect(lambda: self.math_operation(' !'))
 
     def print_key_event(self, event) -> None:
         # print(event.name)
+        pressed = ( "QPushButton {\n"
+                    "border-bottom: 2px solid rgb(0, 148, 198);\n"
+                    "border-left: 1rem solid rgb(0, 0, 0);\n"
+                    "border-top: none;\n"
+                    "border-right: none;\n"
+                    "width: 5px;\n"
+                    "color: #FFF;\n"
+                    "background-color: #222;\n"
+                    "border-radius: 10px;\n"
+                    "background-color: #666;\n"
+                    "border-bottom: 2px solid rgb(255, 255, 255);\n"
+                    "color: #Dff;\n}")
+
         if event.name == '0':
             self.ui.Button_0.click()
         elif event.name == '1':
@@ -74,6 +99,10 @@ class Calculator(QMainWindow):
             self.ui.Button_2.click()
         elif event.name == '3':
             self.ui.Button_3.click()
+            # self.ui.Button_3.setStyleSheet(pressed)
+            # time.sleep(0.5)
+            # self.ui.Button_3.setStyleSheet(self.unpressed)
+            # self.ui.Button_3.setShortcut('3')
         elif event.name == '4':
             self.ui.Button_4.click()
         elif event.name == '5':
@@ -81,6 +110,7 @@ class Calculator(QMainWindow):
         elif event.name == '6':
             self.ui.Button_6.click()
         elif event.name == '7':
+            # self.ui.Button_7.clicked.connect(self.add_number("7"))
             self.ui.Button_7.click()
         elif event.name == '8':
             self.ui.Button_8.click()
@@ -215,7 +245,32 @@ class Calculator(QMainWindow):
     def get_history_text_width(self) -> int:
         return self.ui.history.fontMetrics().boundingRect(self.ui.history.text()).width()
 
-    def calculate(self) -> Optional[str]:
+    def binary_calculate(self) -> Optional[str]:
+        entry = self.ui.entry.text()
+        temp = self.ui.history.text()
+        if temp:
+            try:
+                result = self.remove_trailing_zeroes(
+                    str(operations[self.get_history_sign()](self.get_history_number(), self.get_entry_number()))
+                )
+                result = result.replace(".", ",")
+                history = temp + " " + self.remove_trailing_zeroes(entry) + " ="
+                history = history.replace(".", ",")
+                self.ui.history.setText(history)
+                self.ui.entry.setText(result)
+                self.adjust_entry_font_size()
+                return result
+
+            except KeyError:
+                pass
+
+            except ZeroDivisionError:
+                if self.get_history_number() == 0:
+                    self.show_error(error_undifined)
+                else:
+                    self.show_error(error_zero_division)
+
+    def unary_calculate(self) -> Optional[str]:
         entry = self.ui.entry.text()
         temp = self.ui.history.text()
         if temp:
@@ -251,8 +306,25 @@ class Calculator(QMainWindow):
                     self.add_history(math_sign)
                 else:
                     self.ui.history.setText(temp[:-2] + f'{math_sign}')
+            elif math_sign == 'fact' or math_sign == 'sqrt' or math_sign == 'sqr':
+                self.ui.history.setText(self.unary_calculate() + f'{math_sign}')
             else:
-                self.ui.history.setText(self.calculate() + f'{math_sign}')
+                self.ui.history.setText(self.binary_calculate() + f'{math_sign}')
+
+    def add_factorial(self):
+        temp = self.ui.history.text()
+
+        if not temp:
+            self.add_history("!")
+        else:
+            if self.get_history_sign() != "!":
+                if self.get_history_sign() == '=':
+                    self.add_history("!")
+                else:
+                    self.ui.history.setText(temp[:-2] + f'{"!"}')
+            else:
+                self.ui.history.setText(self.binary_calculate() + f'{"!"}')
+
 
     def show_error(self, text: str) -> None:
         self.ui.entry.setMaxLength(len(text))
