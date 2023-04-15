@@ -9,14 +9,15 @@ from PySide6.QtGui import QFontDatabase
 from Newdesign import Ui_MainWindow
 from operator import add, sub, mul, truediv
 import keyboard
+import Calc_Library as cl
 
 operations = {
-    "+": add,
-    "-": sub,
-    # "*": mul,
-    # "/": truediv
-    "×": mul,
-    "÷": truediv
+    "+": cl.Plus,
+    "-": cl.Minus,
+    # "*": cl.Multiply,
+    # "/": cl.Divide,
+    "×": cl.Multiply,
+    "÷": cl.Divide,
 }
 
 error_zero_division = "You can't divide by zero!"

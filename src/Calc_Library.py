@@ -1,4 +1,3 @@
-import main
 
 def Factorial(n):
     if n == 0:
@@ -13,10 +12,20 @@ def Power(n, p):
     return n ** p
 
 def Plus(n, p):
-    return n + p
+    x = n + p
+    if not x.is_integer():
+        round(x, 2)
+    return x
+    # return n + p
 
 def Minus(n, p):
-    return n - p
+    x = n - p
+    if not x.is_integer():
+        num_str = str(x)
+        num_digits = len(num_str)
+        if num_digits > 8:
+            x = round(x, 2)
+    return x
 
 def Multiply(n, p):
     return n * p
