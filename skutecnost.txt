@@ -1,0 +1,18 @@
+Dmytro Trifonov “xtrifo00”
+Implementation of math library / Tests / GUI linkage
+2. Dmytro Khodarevskyi “xkhoda01”
+Documentation / Overall support with any task / Installer-Uninstaller
+3. Denys Chernenko “xchern08”
+Graphical User Interface / GUI mockup / GUI linkage
+4. Yaroslav Hryn “xhryny00”
+User guide / GIT control / Installer-Uninstaller
+
+Actual: (for now)
+1. Dmytro Trifonov “xtrifo00”
+GUI / GUI linkage
+2. Dmytro Khodarevskyi “xkhoda01”
+GIT control / Math library / GUI
+3. Denys Chernenko “xchern08”
+Tests / Pair programming
+4. Yaroslav Hryn “xhryny00”
+Installer-Uninstaller / Profiling
