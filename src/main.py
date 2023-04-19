@@ -12,16 +12,20 @@ import keyboard
 import Calc_Library as cl
 import time
 
-operations = {
+operations_binary = {
     "+": cl.Plus,
     "-": cl.Minus,
-    # "*": cl.Multiply,
-    # "/": cl.Divide,
     "×": cl.Multiply,
     "÷": cl.Divide,
+    "^": cl.Power,
 }
 
+operations_unary = {
+    " √": cl.SquareRoot,
+    " !": cl.Factorial,
+}
 
+disabled = False
 
 
 
@@ -45,6 +49,9 @@ class Calculator(QMainWindow):
         self.unpressed = self.ui.Button_1.styleSheet()
 
         self.style_sheet_for_enable = self.ui.Button_Divide.styleSheet()
+        self.nums_style_sheet = self.ui.Button_0.styleSheet()
+        self.equal_style_sheet = self.ui.Button_Equal.styleSheet()
+        self.sign_style_sheet = self.ui.Button_Sign.styleSheet()
         QFontDatabase.addApplicationFont("Rubik\static\Rubik-Bold.ttf")
 
         self.ui.Button_0.clicked.connect(lambda: self.add_number("0"))
@@ -133,6 +140,10 @@ class Calculator(QMainWindow):
             self.ui.Button_Multiply.click()
         elif event.name == '/':
             self.ui.Button_Divide.click()
+        elif event.name == '^':
+            self.ui.Button_Power.click()
+        elif event.name == '!':
+            self.ui.Button_Factorial.click()
 
 
     # keyboard.on_press(lambda event: self.print_key_event(event))
@@ -181,12 +192,19 @@ class Calculator(QMainWindow):
         self.remove_error()
         self.ui.entry.setText("0")
         self.ui.history.clear()
+        self.adjust_entry_font_size()
+
+        self.disable_buttons(0)
 
     def clear_entry(self) -> None:
         self.remove_error()
         self.clear_history_if_equality()
         self.ui.entry.setText("0")
         self.adjust_entry_font_size()
+        self.adjust_entry_font_size()
+
+        self.disable_buttons(0)
+
 
     def backspace(self) -> None:
         self.remove_error()
@@ -219,14 +237,16 @@ class Calculator(QMainWindow):
     @staticmethod
     def remove_trailing_zeroes(number: str) -> str:
         n = str(number)
+        if n == "error":
+            return n
         n = n.replace(",", ".")
         n = str(float(n))
         return n[:-2] if n.endswith('.0') else n
 
     def get_entry_number(self) -> Union[int, float]:
+        temp = self.ui.history.text()
         entry = self.ui.entry.text().strip(',')
         entry = entry.replace(",", ".")
-        print(entry)
         return float(entry) if '.' in entry else int(entry)
 
     def get_history_number(self) -> Union[int, float, None]:
@@ -246,12 +266,13 @@ class Calculator(QMainWindow):
         return self.ui.history.fontMetrics().boundingRect(self.ui.history.text()).width()
 
     def binary_calculate(self) -> Optional[str]:
+        print("binary calculate")
         entry = self.ui.entry.text()
         temp = self.ui.history.text()
         if temp:
             try:
                 result = self.remove_trailing_zeroes(
-                    str(operations[self.get_history_sign()](self.get_history_number(), self.get_entry_number()))
+                    str(operations_binary[self.get_history_sign()](self.get_history_number(), self.get_entry_number()))
                 )
                 result = result.replace(".", ",")
                 history = temp + " " + self.remove_trailing_zeroes(entry) + " ="
@@ -259,6 +280,10 @@ class Calculator(QMainWindow):
                 self.ui.history.setText(history)
                 self.ui.entry.setText(result)
                 self.adjust_entry_font_size()
+                if result == "error":
+                    # self.ui.history.clear()
+                    self.disable_buttons(1)
+                    # self.show_error(error_undifined)
                 return result
 
             except KeyError:
@@ -270,60 +295,164 @@ class Calculator(QMainWindow):
                 else:
                     self.show_error(error_zero_division)
 
-    def unary_calculate(self) -> Optional[str]:
+    def unary_calculate(self, math_sign) -> Optional[str]:
         entry = self.ui.entry.text()
         temp = self.ui.history.text()
+
+        print(math_sign)
         if temp:
             try:
+                print_entry = self.get_entry_number()
+                print(str(print_entry) + " print entry")
                 result = self.remove_trailing_zeroes(
-                    str(operations[self.get_history_sign()](self.get_history_number(), self.get_entry_number()))
+                    str(operations_unary[math_sign](self.get_entry_number()))
                 )
                 result = result.replace(".", ",")
                 history = temp + " " + self.remove_trailing_zeroes(entry) + " ="
                 history = history.replace(".", ",")
-                self.ui.history.setText(history)
-                self.ui.entry.setText(result)
-                self.adjust_entry_font_size()
-                return result
+                if math_sign == ' √' or math_sign == ' !':
+                    self.ui.history.setText(history + " " + result)
+
+                    print("temp" + temp)
+
+                    self.ui.history.setText(temp)
+                    self.ui.entry.setText(result)
+                    self.adjust_entry_font_size()
+                    return result
+                else:
+                    print("else")
+                    self.ui.history.setText(history)
+                    self.ui.entry.setText(result)
+                    self.adjust_entry_font_size()
+                    return result
 
             except KeyError:
                 pass
+        else:
+            try:
+                result = self.remove_trailing_zeroes(str(operations_unary[math_sign](self.get_entry_number())))
+                print(result + " result")
+                if result == "error":
+                    # self.ui.history.clear()
+                    self.disable_buttons(1)
+                return result
+            except KeyError:
+                print("key error")
+                pass
 
-            except ZeroDivisionError:
-                if self.get_history_number() == 0:
-                    self.show_error(error_undifined)
-                else:
-                    self.show_error(error_zero_division)
 
     def math_operation(self, math_sign: str):
         temp = self.ui.history.text()
-
+        number = self.get_entry_number()
+        history_to_check = self.ui.history.text()
+        print("temp to check" + temp)
         if not temp:
-            self.add_history(math_sign)
+            print(math_sign + " first")
+            if math_sign == ' √' or math_sign == ' !':
+                print(math_sign + " unary")
+                self.ui.entry.setText(str(self.unary_calculate(math_sign)))
+                print(self.ui.entry.text() + " entryadwd")
+                self.adjust_entry_font_size()
+                if math_sign == ' √':
+                    self.ui.history.setText(f'{math_sign}' + str(number) + " ")
+                else:
+                    self.ui.history.setText(str(number) + f'{math_sign}' + " ")
+            else:
+                self.add_history(math_sign)
         else:
+            if math_sign == ' √' or math_sign == ' !':
+                print(math_sign + " unary")
+                self.ui.entry.setText(str(self.unary_calculate(math_sign)))
+                hist = temp[:-2] + f'{math_sign}'
+                print(hist + " history")
             if self.get_history_sign() != math_sign:
                 if self.get_history_sign() == '=':
                     self.add_history(math_sign)
                 else:
-                    self.ui.history.setText(temp[:-2] + f'{math_sign}')
-            elif math_sign == 'fact' or math_sign == 'sqrt' or math_sign == 'sqr':
-                self.ui.history.setText(self.unary_calculate() + f'{math_sign}')
+                    symbols = ['!', '√']
+                    print(temp + " temp")
+                    print(history_to_check + " history to check")
+                    for symbol in symbols:
+                        if symbol in history_to_check.replace(" ", ""):
+                        # if symbol in history_to_check.replace(" ", ""):
+                        # print(symbol + " symbol")
+
+                        # if ord(symbol) == ord(history_to_check.replace(" ", "")[0]):
+                            print("unary symbol detected")
+                            print("unary symbol detected")
+                            print(self.ui.history.text() + " historyy")
+                            print(self.ui.entry.text() + " entryy")
+                            # print(entry + " entryeal")
+                            # entry = self.ui.entry.text()
+                            if math_sign != ' √' and math_sign != ' !': #  √
+                                if "!" in history_to_check:
+                                    entry = self.ui.entry.text()
+                                    # self.ui.entry.setText("0")
+                                    # break
+                                self.ui.history.setText(str(entry) + f'{math_sign}' + " ")
+                                # if math_sign == ' √':
+                                #     self.ui.history.setText(f'{math_sign}' + self.ui.entry.text())
+                                # else:
+                                #     self.ui.history.setText(self.ui.entry.text() + f'{math_sign}')
+                                history_to_check = self.ui.history.text()
+                                print(history_to_check + " history to check")
+                                # symbols = ['!', '√']
+                                for symbol in symbols:
+                                    if symbol in history_to_check:
+                                        print("0 result set")
+                                        self.ui.entry.setText("0")
+                                        break
+                                print("aboba")
+                                self.ui.entry.setText("0")
+                            else:
+                                print("aboba 2")
+                                self.ui.history.setText(self.binary_calculate() + f'{math_sign}')
+
+                        else:
+                            prev = self.ui.history.text()
+                            entry = self.ui.entry.text()
+                            print(prev + " previiii")
+                            print(entry + " entry")
+                            # history_to_check = self.ui.history.text()
+                            self.ui.history.setText(prev)
+                            # self.ui.entry.setText(entry + f'{math_sign}')
+                            # self.ui.history.setText(entry + f'{math_sign}')
+                            print(self.ui.history.text() + " history")
+
+                            symbols = ['!', '√']
+                            reset = True
+                            # print(history_to_check + " history to check")
+                            print(temp + " tempaaaaa")
+                            for symbol in symbols:
+                                if symbol in temp:
+                                    # print("0 result set))")
+                                    # self.ui.entry.setText("0")
+                                    reset = False
+                                    # break
+
+                            if reset:
+                                # print(self.ui.entry.text() + " entry")
+                                # result = self.unary_calculate(math_sign)
+                                self.ui.entry.setText(entry)
+                                self.adjust_entry_font_size()
+                                # break
+                            # self.ui.history.setText(temp[:-2] + " " + f'{math_sign}')
+                            else:
+                                print("0 result set here")
+                                self.ui.entry.setText("0")
+                                self.adjust_entry_font_size()
+                                # break
+                            print("need to calculate")
+                            # if reset:
+                            #     sign = f'{math_sign}'
+                            #     self.ui.history.setText(temp[:-2] + sign)
+                            # self.ui.entry.setText(str(self._calculate(math_sign)))
+                            # self.ui.history.setText(self.binary_calculate() + f'{math_sign}')
+                            # self.ui.entry.setText("0")
+
             else:
                 self.ui.history.setText(self.binary_calculate() + f'{math_sign}')
 
-    def add_factorial(self):
-        temp = self.ui.history.text()
-
-        if not temp:
-            self.add_history("!")
-        else:
-            if self.get_history_sign() != "!":
-                if self.get_history_sign() == '=':
-                    self.add_history("!")
-                else:
-                    self.ui.history.setText(temp[:-2] + f'{"!"}')
-            else:
-                self.ui.history.setText(self.binary_calculate() + f'{"!"}')
 
 
     def show_error(self, text: str) -> None:
@@ -340,12 +469,55 @@ class Calculator(QMainWindow):
             self.disable_buttons(False)
 
     def disable_buttons(self, disable: bool) -> None:
-        self.ui.Button_Equal.setDisabled(disable)
-        self.ui.Button_Plus.setDisabled(disable)
-        self.ui.Button_Minus.setDisabled(disable)
-        self.ui.Button_Multiply.setDisabled(disable)
-        self.ui.Button_Divide.setDisabled(disable)
-        self.ui.Button_Comma.setDisabled(disable)
+        global disabled
+        if disable:
+            disabled = True
+            self.ui.Button_Equal.setDisabled(disable)
+            self.ui.Button_Plus.setDisabled(disable)
+            self.ui.Button_Minus.setDisabled(disable)
+            self.ui.Button_Multiply.setDisabled(disable)
+            self.ui.Button_Divide.setDisabled(disable)
+            self.ui.Button_Comma.setDisabled(disable)
+
+            self.ui.Button_0.setDisabled(disable)
+            self.ui.Button_1.setDisabled(disable)
+            self.ui.Button_2.setDisabled(disable)
+            self.ui.Button_3.setDisabled(disable)
+            self.ui.Button_4.setDisabled(disable)
+            self.ui.Button_5.setDisabled(disable)
+            self.ui.Button_6.setDisabled(disable)
+            self.ui.Button_7.setDisabled(disable)
+            self.ui.Button_8.setDisabled(disable)
+            self.ui.Button_9.setDisabled(disable)
+            self.ui.Button_Sign.setDisabled(disable)
+
+            self.ui.Button_Factorial.setDisabled(disable)
+            self.ui.Button_Power.setDisabled(disable)
+            self.ui.Button_Root.setDisabled(disable)
+        else:
+            self.ui.Button_Equal.setEnabled(not disable)
+            self.ui.Button_Plus.setEnabled(not disable)
+            self.ui.Button_Minus.setEnabled(not disable)
+            self.ui.Button_Multiply.setEnabled(not disable)
+            self.ui.Button_Divide.setEnabled(not disable)
+            self.ui.Button_Comma.setEnabled(not disable)
+
+            self.ui.Button_0.setEnabled(not disable)
+            self.ui.Button_1.setEnabled(not disable)
+            self.ui.Button_2.setEnabled(not disable)
+            self.ui.Button_3.setEnabled(not disable)
+            self.ui.Button_4.setEnabled(not disable)
+            self.ui.Button_5.setEnabled(not disable)
+            self.ui.Button_6.setEnabled(not disable)
+            self.ui.Button_7.setEnabled(not disable)
+            self.ui.Button_8.setEnabled(not disable)
+            self.ui.Button_9.setEnabled(not disable)
+            self.ui.Button_Sign.setEnabled(not disable)
+
+            self.ui.Button_Factorial.setEnabled(not disable)
+            self.ui.Button_Power.setEnabled(not disable)
+            self.ui.Button_Root.setEnabled(not disable)
+
         if disable:
             color =("border-bottom: 2px solid rgb(0, 148, 198);"
                     " border-left: 1rem solid rgb(0, 0, 0);"
@@ -368,13 +540,48 @@ class Calculator(QMainWindow):
         self.ui.Button_Divide.setStyleSheet(css_color)
         self.ui.Button_Comma.setStyleSheet(css_color)
 
+        self.ui.Button_0.setStyleSheet(css_color)
+        self.ui.Button_1.setStyleSheet(css_color)
+        self.ui.Button_2.setStyleSheet(css_color)
+        self.ui.Button_3.setStyleSheet(css_color)
+        self.ui.Button_4.setStyleSheet(css_color)
+        self.ui.Button_5.setStyleSheet(css_color)
+        self.ui.Button_6.setStyleSheet(css_color)
+        self.ui.Button_7.setStyleSheet(css_color)
+        self.ui.Button_8.setStyleSheet(css_color)
+        self.ui.Button_9.setStyleSheet(css_color)
+        self.ui.Button_Sign.setStyleSheet(css_color)
+
+        self.ui.Button_Factorial.setStyleSheet(css_color)
+        self.ui.Button_Power.setStyleSheet(css_color)
+        self.ui.Button_Root.setStyleSheet(css_color)
+
+
     def return_buttons_color(self) -> None:
-        self.ui.Button_Equal.setStyleSheet(self.style_sheet_for_enable)
-        self.ui.Button_Plus.setStyleSheet(self.style_sheet_for_enable)
-        self.ui.Button_Minus.setStyleSheet(self.style_sheet_for_enable)
-        self.ui.Button_Multiply.setStyleSheet(self.style_sheet_for_enable)
-        self.ui.Button_Divide.setStyleSheet(self.style_sheet_for_enable)
-        self.ui.Button_Comma.setStyleSheet(self.style_sheet_for_enable)
+        global disabled
+        if disabled:
+            self.ui.Button_Equal.setStyleSheet(self.equal_style_sheet)
+            self.ui.Button_Plus.setStyleSheet(self.style_sheet_for_enable)
+            self.ui.Button_Minus.setStyleSheet(self.style_sheet_for_enable)
+            self.ui.Button_Multiply.setStyleSheet(self.style_sheet_for_enable)
+            self.ui.Button_Divide.setStyleSheet(self.style_sheet_for_enable)
+            self.ui.Button_Comma.setStyleSheet(self.nums_style_sheet)
+
+            self.ui.Button_0.setStyleSheet(self.nums_style_sheet)
+            self.ui.Button_1.setStyleSheet(self.nums_style_sheet)
+            self.ui.Button_2.setStyleSheet(self.nums_style_sheet)
+            self.ui.Button_3.setStyleSheet(self.nums_style_sheet)
+            self.ui.Button_4.setStyleSheet(self.nums_style_sheet)
+            self.ui.Button_5.setStyleSheet(self.nums_style_sheet)
+            self.ui.Button_6.setStyleSheet(self.nums_style_sheet)
+            self.ui.Button_7.setStyleSheet(self.nums_style_sheet)
+            self.ui.Button_8.setStyleSheet(self.nums_style_sheet)
+            self.ui.Button_9.setStyleSheet(self.nums_style_sheet)
+            self.ui.Button_Sign.setStyleSheet(self.sign_style_sheet)
+
+            self.ui.Button_Factorial.setStyleSheet(self.style_sheet_for_enable)
+            self.ui.Button_Power.setStyleSheet(self.style_sheet_for_enable)
+            self.ui.Button_Root.setStyleSheet(self.style_sheet_for_enable)
 
     def adjust_entry_font_size(self) -> None:
         font_size = default_entry_font_size

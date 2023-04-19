@@ -65,7 +65,7 @@ class Ui_MainWindow(object):
         self.history.setStyleSheet(u"color: gray;\n"
 "background-color: rgb(29, 29, 29);\n"
 "font-family: Bahnschrift;\n"
-"border-radius: 5px;")
+"border-radius: 8px;")
         self.history.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.verticalLayout_2.addWidget(self.history)
@@ -977,7 +977,7 @@ class Ui_MainWindow(object):
         self.Button_Root.setText("")
         self.Button_Multiply.setText(QCoreApplication.translate("MainWindow", u"\u00d7", None))
 #if QT_CONFIG(shortcut)
-        self.Button_Multiply.setShortcut(QCoreApplication.translate("MainWindow", u"*", None))
+        # self.Button_Multiply.setShortcut(QCoreApplication.translate("MainWindow", u"*", None))
 #endif // QT_CONFIG(shortcut)
         self.Button_5.setText(QCoreApplication.translate("MainWindow", u"5", None))
 #if QT_CONFIG(shortcut)
