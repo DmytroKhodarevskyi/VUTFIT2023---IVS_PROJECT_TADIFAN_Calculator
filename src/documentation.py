@@ -150,7 +150,7 @@ def clear_entry(self):
     Parameters:
     -----------
     None
-
+    
     Returns:
     --------
     None
@@ -226,128 +226,317 @@ def remove_trailing_zeroes(number: str):
 
 
 def get_entry_number(self):
-    """
-    @brief Gets the number from entry from the calculator display.
-    @return The number from the calculator display.
-    """
+     """
+     Converts the current text in the calculator's entry field to a number.
+
+     Parameters:
+     -----------
+     None
+
+     Returns:
+     --------
+     int or float:
+         The number representation of the current text in the entry field. If the text contains a decimal point,
+         it is returned as a float; otherwise, it is returned as an integer.
+
+     Description:
+     ------------
+     This method retrieves the text currently displayed in the calculator's entry field, strips any commas from it,
+     replaces commas with decimal points (to handle different locales), and then returns the resulting number. If the
+     number contains a decimal point, it is returned as a float; otherwise, it is returned as an integer.
+     """
 
 
 def get_history_number(self):
     """
-    @brief Gets the number from history from the calculator display.
-    @return The number from the calculator display.
+    Parses the first number from the history text in the calculator's display.
+
+    Returns:
+    --------
+    Union[int, float, None]
+       The parsed number as an integer or float, or None if no number was found.
+
+    Description:
+    ------------
+    This method retrieves the text from the calculator's history display, removes any commas or leading/trailing spaces,
+    splits the text into words and attempts to convert the first word to a float or integer. If no number is found, None
+    is returned instead.
     """
 
 
 def get_history_sign(self):
     """
-    @brief Gets the math sign from history from the calculator display.
-    @return The math sign from the calculator display.
+    Get the last operator sign from the history field.
+
+    Parameters:
+    -----------
+    None
+
+    Returns:
+    --------
+    Optional[str]
+        The last operator sign from the history field, or None if the history field is empty.
+
+    Description:
+    ------------
+    This method checks if the history field is not empty, removes any trailing commas from the text, splits the text by
+    whitespace, and returns the last element of the resulting list. If the resulting list is empty, the method returns
+    None.
     """
+
+
 
 
 def get_entry_text_width(self):
     """
-    @brief Gets the width of the entry text.
-    @return The width of the entry text.
+    Calculates the width (in pixels) of the current text in the calculator's entry field.
+
+    Parameters:
+    -----------
+    None
+
+    Returns:
+    --------
+    int:
+        The width (in pixels) of the current text in the calculator's entry field.
+
+    Description:
+    ------------
+    This method uses the font metrics of the entry field's font to calculate the width (in pixels) of the current text in the
+    calculator's entry field. It returns this width as an integer value.
     """
 
 
 def get_history_text_width(self):
     """
-    @brief Gets the width of the history text.
-    @return The width of the history text.
+    Gets the width, in pixels, of the text in the calculator's history display.
+
+    Parameters:
+    -----------
+    None
+
+    Returns:
+    --------
+    int:
+    The width, in pixels, of the text in the calculator's history display.
+
+    Description:
+    ------------
+    This method uses the font metrics of the calculator's history display to calculate the bounding rectangle around the
+    text in the display, and returns its width in pixels. This is useful for determining the amount of horizontal space
+    needed to display the entire history entry without truncation or overflow.
     """
 
 
 def binary_calculate(self, math_sign: str):
     """
-    @brief Calculates the result of the binary operation and displays it on the calculator UI.
-    @This function retrieves the first operand and the operator from the calculator history and
-    the second operand from the calculator entry.
-    It then calculates the result of the binary operation and displays it on the calculator entry
-    while also updating the calculator history.
-    @return The calculated result as a string, or None if an error occurred during the calculation.
+    Binary calculation
+
+    Parameters:
+    -----------
+    math_sign : str
+        The math symbol to currently perform (from the binary type).
+
+    Returns:
+    --------
+    the result of the operation
+
+    Description:
+    ------------
+    The function performs the operation requested from math_operation function
+    also operates from some possible calculator states and returns the result
+    of the operation
     """
 
 
 def unary_calculate(self, math_sign):
     """
-    @brief Calculates the result of the unary operation and displays it on the calculator UI.
-    @This function retrieves the operand and the operator from the calculator entry.
-    It then calculates the result of the unary operation and displays it on the calculator entry.
-    @return The calculated result as a string, or None if an error occurred during the calculation.
+    Unary calculation
+
+    Parameters:
+    -----------
+    math_sign : str
+        The math symbol to currently perform (from the unary type).
+
+    Returns:
+    --------
+    the result of the operation
+
+    Description:
+    ------------
+    The function performs the operation requested from math_operation function
+    also operates from some possible calculator states and returns the result
+    of the operation
     """
 
 
 def show_error(self):
     """
-    @brief Displays an error message on the calculator UI.
-    @return None
+    Show an error message in the entry field and disable all buttons.
+
+    Parameters:
+    -----------
+    text: str
+        The error message to display.
+
+    Returns:
+    --------
+    None
+
+    Description:
+    ------------
+    This method sets the maximum length of the entry field to the length of the error message, sets the text of the entry
+    field to the error message, adjusts the font size of the entry field to fit the text, and disables all buttons.
     """
 
 
 def remove_error(self):
     """
-    @brief Removes the error message from the calculator UI.
-    @return None
+    Removes error message from the calculator's display if present.
+
+    Parameters:
+    -----------
+    None
+
+    Returns:
+    --------
+    None
+
+    Description:
+    ------------
+    This method checks if the current text in the calculator's display is an error message ('Undefined' or 'Zero Division Error'),
+    and if so, it sets the maximum length of the text to the default entry maximum length, sets the text to '0', adjusts the
+    font size, and enables all calculator buttons.
     """
 
 
 def disable_buttons(self):
     """
-    @brief Disables or enables all buttons in the calculator.
-    @param disable A boolean value indicating whether to disable (True) or enable (False) the buttons.
-    This function disables or enables all buttons in the calculator based on the value of the
-    'disable' parameter. If 'disable' is True, all buttons are disabled and their color is changed.
-    If 'disable' is False, all buttons are enabled and their color is changed back to the original color.
-    @return None
+    Disables or enables calculator buttons based on the input argument.
+
+    Parameters:
+    -----------
+    disable : bool
+    True to disable the buttons, False to enable them.
+
+    Returns:
+    --------
+    None
+
+    Description:
+    ------------
+    This method disables or enables calculator buttons based on the input argument. If disable is True, it disables
+    all calculator buttons except the Sign, and changes their color to indicate that they are disabled. If disable is False,
+    it enables all calculator buttons and returns their color to normal.
     """
 
 
 def change_buttons_color(self, css_color: str):
     """
-    @brief Changes the color of all buttons in the calculator.
-    @param css_color The color to change the buttons to.
-    This function changes the color of all buttons in the calculator to the color specified by the
-    'css_color' parameter.
-    @return None
+    Changes the color of all calculator buttons to the specified CSS color.
+
+    Parameters:
+    -----------
+    css_color : str
+
+    Returns:
+    --------
+    None
+
+    Description:
+    ------------
+
+    This method takes a CSS color as input and applies it to the background color and border of all calculator buttons.
+    This can be used to give a visual indication that the buttons are disabled or to change the color theme of the calculator
+    based on user preferences.
     """
 
 
 def return_button_color(self, button):
     """
-    @brief Returns the color of a button.
-    @param button The button to get the color of.
-    @return The color of the button.
+    Change the color of the calculator buttons back to their default color.
+
+    Parameters:
+    -----------
+    None
+
+    Returns:
+    --------
+    None
+
+    Description:
+    ------------
+    This method changes the style sheet of each button to its default style sheet, except for the comma and sign buttons
+    which are set to the nums_style_sheet and sign_style_sheet, respectively.
     """
+
+
 
 
 def adjust_entry_font_size(self):
     """
-    @brief Adjusts the font size of the entry text.
-    @return None
+    Adjust the font size of the entry field to fit the text.
+
+    Parameters:
+    -----------
+    None
+
+    Returns:
+    --------
+    None
+
+    Description:
+    ------------
+    This method iteratively reduces the font size of the entry field until the width of the text is less than the width
+    of the entry field minus 20 pixels. It then iteratively increases the font size of the entry field until the width of
+    the text is greater than the width of the entry field minus 20 pixels, or until the default font size is reached.
     """
 
 
 def resizeEvent(self, event):
     """
-    @brief Handles the resize event for the calculator.
-    @param event The resize event to handle.
-    @return None
+    Adjusts the font size of the entry field to fit the available space when the widget is resized.
+
+    Parameters:
+    -----------
+    event: QResizeEvent
+        The resize event that triggered the function call.
+
+    Returns:
+    --------
+    None
+
+    Description:
+    ------------
+    This method is called automatically by the Qt framework when the widget is resized. It adjusts the font size of
+    the entry field to fit the available space while maintaining a minimum font size, to ensure that the text is
+    always legible.
     """
 
 
 def math_operation(self, math_sign: str):
     """
-    @brief Performs a math operation.
-    @param math_sign The math sign to perform.
-    @return None
+    Complete calculator math operation
+
+    Parameters:
+    -----------
+    math_sign : str
+        The math symbol to currently perform.
+
+    Returns:
+    --------
+    None
+
+    Description:
+    ------------
+    The function performs the operation depending on entry and history status,
+    using the symbol from the parameter. It chooses between the unary operand
+    and binary operand and performs the calculation
     """
 
 
 def add_history(self, math_sign: str):
- """
+    """
     Adds the current entry and the math sign to the history widget.
 
     Parameters:
@@ -357,12 +546,12 @@ def add_history(self, math_sign: str):
 
     Returns:
     --------
-     None
+    None
 
-     Description:
-     ------------
+    Description:
+    ------------
     This method adds the current entry and the math sign to the history widget, clearing the entry afterwards.
     If the history widget is empty or the last operation performed was an equality operation, it creates a new
     history string using the current entry and the math symbol. It replaces the dot with a comma for localization.
     Finally, it sets the text of the history widget to the new string and sets the entry text to "0".
- """
+    """
