@@ -529,6 +529,9 @@ class Calculator(QMainWindow):
             self.ui.Button_Factorial.setDisabled(disable)
             self.ui.Button_Power.setDisabled(disable)
             self.ui.Button_Root.setDisabled(disable)
+
+            self.ui.Button_backspace.setDisabled(disable)
+            self.ui.Button_ce.setDisabled(disable)
         else:
             self.ui.Button_Equal.setEnabled(not disable)
             self.ui.Button_Plus.setEnabled(not disable)
@@ -552,6 +555,9 @@ class Calculator(QMainWindow):
             self.ui.Button_Factorial.setEnabled(not disable)
             self.ui.Button_Power.setEnabled(not disable)
             self.ui.Button_Root.setEnabled(not disable)
+
+            self.ui.Button_backspace.setEnabled(not disable)
+            self.ui.Button_ce.setEnabled(not disable)
 
         if disable:
             color =("border-bottom: 2px solid rgb(0, 148, 198);"
@@ -591,6 +597,9 @@ class Calculator(QMainWindow):
         self.ui.Button_Power.setStyleSheet(css_color)
         self.ui.Button_Root.setStyleSheet(css_color)
 
+        self.ui.Button_backspace.setStyleSheet(css_color)
+        self.ui.Button_ce.setStyleSheet(css_color)
+
 
     def return_buttons_color(self) -> None:
         global disabled
@@ -617,6 +626,9 @@ class Calculator(QMainWindow):
             self.ui.Button_Factorial.setStyleSheet(self.style_sheet_for_enable)
             self.ui.Button_Power.setStyleSheet(self.style_sheet_for_enable)
             self.ui.Button_Root.setStyleSheet(self.style_sheet_for_enable)
+
+            self.ui.Button_backspace.setStyleSheet(self.style_sheet_for_enable)
+            self.ui.Button_ce.setStyleSheet(self.sign_style_sheet)
 
     def adjust_entry_font_size(self) -> None:
         font_size = default_entry_font_size
