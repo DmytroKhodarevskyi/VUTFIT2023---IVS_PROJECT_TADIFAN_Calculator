@@ -64,16 +64,16 @@
            <div itemprop="articleBody">
              
   <h1>Source code for Calc_Library</h1><div class="highlight"><pre>
-<span></span>
-<div class="viewcode-block" id="Factorial"><a class="viewcode-back" href="../Calc_Library.html#Calc_Library.Factorial">[docs]</a><span class="k">def</span> <span class="nf">Factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span></span><span class="k">def</span> <span class="nf">Factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;error&quot;</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">Factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;error&quot;</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">Factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">Factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
 
 <div class="viewcode-block" id="SquareRoot"><a class="viewcode-back" href="../Calc_Library.html#Calc_Library.SquareRoot">[docs]</a><span class="k">def</span> <span class="nf">SquareRoot</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -120,6 +120,13 @@
     <span class="k">if</span> <span class="n">num_digits</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">:</span>
         <span class="n">x</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">x</span></div>
+
+
+<div class="viewcode-block" id="Factorial"><a class="viewcode-back" href="../Calc_Library.html#Calc_Library.Factorial">[docs]</a><span class="k">def</span> <span class="nf">Factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">Factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span></div>
 
 
 </pre></div>
