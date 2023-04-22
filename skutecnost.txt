@@ -9,10 +9,11 @@ User guide / GIT control / Installer-Uninstaller
 
 Actual: (for now)
 1. Dmytro Trifonov “xtrifo00”
-GUI / GUI linkage
+GUI / GUI linkage / Mockup / Main Calculator Programming
 2. Dmytro Khodarevskyi “xkhoda01”
-GIT control / Math library / GUI
+GIT control / Math library / GUI / Documentation / Main Calculator Programming
 3. Denys Chernenko “xchern08”
-Tests / Pair programming
+Tests / Pair programming / Documentation
 4. Yaroslav Hryn “xhryny00”
-Installer-Uninstaller / Profiling
+Installer-Uninstaller / Profiling+Profiling Documentation /
+Documentation / User guide
