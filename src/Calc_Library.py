@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 def Factorial(n):
     if not isinstance(n, int):
@@ -54,5 +55,32 @@ def Divide(n, p):
     if num_digits > 8:
         x = round(x, 8)
     return x
+=======
+import main
+
+def Factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * Factorial(n-1)
+
+def SquareRoot(n):
+    return n ** 0.5
+
+def Power(n, p):
+    return n ** p
+
+def Plus(n, p):
+    return n + p
+
+def Minus(n, p):
+    return n - p
+
+def Multiply(n, p):
+    return n * p
+
+def Divide(n, p):
+    return n / p
+>>>>>>> c9845063fc922ad4df007216575131c472bfdb34
 
 
