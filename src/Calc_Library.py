@@ -1,4 +1,3 @@
-import main
 def Factorial(n):
     if not isinstance(n, int):
         return "error"
