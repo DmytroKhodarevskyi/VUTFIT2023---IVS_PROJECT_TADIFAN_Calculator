@@ -351,7 +351,7 @@ class Calculator(QMainWindow):
                 pass
 
 
-    def math_opperation(self, math_sign: str):
+    def math_operation(self, math_sign: str):
         temp = self.ui.history.text()
         number = self.get_entry_number()
         history_to_check = self.ui.history.text()
@@ -383,9 +383,13 @@ class Calculator(QMainWindow):
                                 for symbol in symbols:
                                     if symbol in history_to_check:
                                         self.ui.entry.setText("0")
+                                        self.adjust_entry_font_size()
+
                                         break
                                 if (math_sign != ' √' and math_sign != ' !'):
                                     self.ui.entry.setText("0")
+                                    self.adjust_entry_font_size()
+
                         else:
                             prev = self.ui.history.text()
                             entry = self.ui.entry.text()
