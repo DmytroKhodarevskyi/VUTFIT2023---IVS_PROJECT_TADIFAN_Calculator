@@ -8,6 +8,7 @@ def Factorial(n):
     else:
         return n * Factorial(n - 1)
 
+
 def SquareRoot(n):
     if n < 0:
         return "error"
@@ -55,10 +56,5 @@ def Divide(n, p):
     return x
 
 
-def Factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * Factorial(n-1)
 
 
