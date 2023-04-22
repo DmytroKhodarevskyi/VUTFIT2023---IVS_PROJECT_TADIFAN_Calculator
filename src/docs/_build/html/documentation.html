@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>documentation module &mdash; Documentation  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">documentation module</a><ul>
+<li><a class="reference internal" href="#documentation.add_history"><code class="docutils literal notranslate"><span class="pre">add_history()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.add_number"><code class="docutils literal notranslate"><span class="pre">add_number()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.add_point"><code class="docutils literal notranslate"><span class="pre">add_point()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.adjust_entry_font_size"><code class="docutils literal notranslate"><span class="pre">adjust_entry_font_size()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.backspace"><code class="docutils literal notranslate"><span class="pre">backspace()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.binary_calculate"><code class="docutils literal notranslate"><span class="pre">binary_calculate()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.change_buttons_color"><code class="docutils literal notranslate"><span class="pre">change_buttons_color()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.change_sign"><code class="docutils literal notranslate"><span class="pre">change_sign()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.clear_all"><code class="docutils literal notranslate"><span class="pre">clear_all()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.clear_entry"><code class="docutils literal notranslate"><span class="pre">clear_entry()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.clear_history_if_equality"><code class="docutils literal notranslate"><span class="pre">clear_history_if_equality()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.disable_buttons"><code class="docutils literal notranslate"><span class="pre">disable_buttons()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.get_entry_number"><code class="docutils literal notranslate"><span class="pre">get_entry_number()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.get_entry_text_width"><code class="docutils literal notranslate"><span class="pre">get_entry_text_width()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.get_history_number"><code class="docutils literal notranslate"><span class="pre">get_history_number()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.get_history_sign"><code class="docutils literal notranslate"><span class="pre">get_history_sign()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.get_history_text_width"><code class="docutils literal notranslate"><span class="pre">get_history_text_width()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.math_operation"><code class="docutils literal notranslate"><span class="pre">math_operation()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.print_key_event"><code class="docutils literal notranslate"><span class="pre">print_key_event()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.register_keyboard_event"><code class="docutils literal notranslate"><span class="pre">register_keyboard_event()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.remove_error"><code class="docutils literal notranslate"><span class="pre">remove_error()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.remove_trailing_zeroes"><code class="docutils literal notranslate"><span class="pre">remove_trailing_zeroes()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.resizeEvent"><code class="docutils literal notranslate"><span class="pre">resizeEvent()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.return_button_color"><code class="docutils literal notranslate"><span class="pre">return_button_color()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.show_error"><code class="docutils literal notranslate"><span class="pre">show_error()</span></code></a></li>
+<li><a class="reference internal" href="#documentation.unary_calculate"><code class="docutils literal notranslate"><span class="pre">unary_calculate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">documentation module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/documentation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-documentation">
+<span id="documentation-module"></span><h1>documentation module<a class="headerlink" href="#module-documentation" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.add_history">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">add_history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">math_sign</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#add_history"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.add_history" title="Permalink to this definition"></a></dt>
+<dd><p>Adds the current entry and the math sign to the history widget.</p>
+<section id="parameters">
+<h2>Parameters:<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>math_sign<span class="classifier">str</span></dt><dd><p>The math symbol to add to the history.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h2>Returns:<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><p>None</p>
+</div></blockquote>
+<p>This method adds the current entry and the math sign to the history widget, clearing the entry afterwards.
+If the history widget is empty or the last operation performed was an equality operation, it creates a new
+history string using the current entry and the math symbol. It replaces the dot with a comma for localization.
+Finally, it sets the text of the history widget to the new string and sets the entry text to “0”.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.add_number">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">add_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Button_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#add_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.add_number" title="Permalink to this definition"></a></dt>
+<dd><p>Add a number to the UI entry widget.</p>
+<section id="id1">
+<h2>Parameters:<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>Button_text<span class="classifier">str</span></dt><dd><p>A string representing the number to be added to the UI entry widget.</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h2>Returns:<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+<section id="description">
+<h2>Description:<a class="headerlink" href="#description" title="Permalink to this heading"></a></h2>
+<p>This method adds a number to the current text in the UI entry widget. If the current text in the UI entry widget is “0”,
+the method replaces it with the <cite>Button_text</cite>. Otherwise, the method appends the <cite>Button_text</cite> to the current text in
+the UI entry widget. After modifying the text in the UI entry widget, the method calls the <cite>adjust_entry_font_size</cite>
+method to adjust the font size of the text if necessary.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.add_point">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">add_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#add_point"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.add_point" title="Permalink to this definition"></a></dt>
+<dd><p>Add a decimal point to the UI entry widget.</p>
+<section id="id3">
+<h2>Parameters:<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+<section id="id4">
+<h2>Returns:<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+<section id="id5">
+<h2>Description:<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<p>This method adds a decimal point (” , “) to the current text in the UI entry widget if one is not already present. If a
+decimal point is already present, the method does nothing. After modifying the text in the UI entry widget, the method
+calls the <cite>adjust_entry_font_size</cite> method to adjust the font size of the text if necessary.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.adjust_entry_font_size">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">adjust_entry_font_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#adjust_entry_font_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.adjust_entry_font_size" title="Permalink to this definition"></a></dt>
+<dd><p>&#64;brief Adjusts the font size of the entry text.
+&#64;return None</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.backspace">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">backspace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#backspace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.backspace" title="Permalink to this definition"></a></dt>
+<dd><p>Delete the last character from the UI entry widget.</p>
+<section id="id6">
+<h2>Parameters:<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+<section id="id7">
+<h2>Returns:<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+<section id="id8">
+<h2>Description:<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+<p>This method removes the last character from the text in the UI entry widget, if it is not already empty. If the entry
+widget contains only a negative sign and no other digits, this method sets the widget value to zero.</p>
+<p>Additionally, this method calls the <cite>adjust_entry_font_size</cite> method to adjust the font size of the entry widget text</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.binary_calculate">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">binary_calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">math_sign</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#binary_calculate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.binary_calculate" title="Permalink to this definition"></a></dt>
+<dd><p>&#64;brief Calculates the result of the binary operation and displays it on the calculator UI.
+&#64;This function retrieves the first operand and the operator from the calculator history and 
+the second operand from the calculator entry.
+It then calculates the result of the binary operation and displays it on the calculator entry 
+while also updating the calculator history.
+&#64;return The calculated result as a string, or None if an error occurred during the calculation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.change_buttons_color">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">change_buttons_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">css_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#change_buttons_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.change_buttons_color" title="Permalink to this definition"></a></dt>
+<dd><p>&#64;brief Changes the color of all buttons in the calculator.
+&#64;param css_color The color to change the buttons to.
+This function changes the color of all buttons in the calculator to the color specified by the 
+‘css_color’ parameter.
+&#64;return None</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.change_sign">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">change_sign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#change_sign"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.change_sign" title="Permalink to this definition"></a></dt>
+<dd><p>Change the sign of the number in the UI entry widget.</p>
+<section id="id9">
+<h2>Parameters:<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+<section id="id10">
+<h2>Returns:<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+<section id="id11">
+<h2>Description:<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h2>
+<p>This method changes the sign of the number currently displayed in the UI entry widget by adding or removing a minus
+sign (“-“). If the number is currently positive, the method adds a minus sign to make it negative. If the number is
+currently negative, the method removes the minus sign to make it positive. If the number is currently zero, the method
+does nothing.</p>
+<p>After changing the sign of the number, the method updates the text in the UI entry widget to reflect the new value,
+and calls the <cite>adjust_entry_font_size</cite> method to adjust the font size of the text if necessary.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.clear_all">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">clear_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#clear_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.clear_all" title="Permalink to this definition"></a></dt>
+<dd><p>Clear the UI entry widget and history, and reset other UI elements.</p>
+<section id="id12">
+<h2>Parameters:<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+<section id="id13">
+<h2>Returns:<a class="headerlink" href="#id13" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+<section id="id14">
+<h2>Description:<a class="headerlink" href="#id14" title="Permalink to this heading"></a></h2>
+<p>This method clears the current value from the UI entry widget and sets it to zero. It also clears any existing
+entries from the history list widget, and calls the <cite>adjust_entry_font_size</cite> method to adjust the font size of the
+entry widget text if necessary.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.clear_entry">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">clear_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#clear_entry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.clear_entry" title="Permalink to this definition"></a></dt>
+<dd><p>Clear the UI entry widget.</p>
+<section id="id15">
+<h2>Parameters:<a class="headerlink" href="#id15" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+<section id="id16">
+<h2>Returns:<a class="headerlink" href="#id16" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+<section id="id17">
+<h2>Description:<a class="headerlink" href="#id17" title="Permalink to this heading"></a></h2>
+<p>This method clears the current value from the UI entry widget and sets it to zero. It also calls the
+<cite>adjust_entry_font_size</cite> method to adjust the font size of the entry widget text if necessary.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.clear_history_if_equality">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">clear_history_if_equality</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#clear_history_if_equality"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.clear_history_if_equality" title="Permalink to this definition"></a></dt>
+<dd><p>Clears the history if the last operation performed was an equality operation.</p>
+<section id="id18">
+<h2>Parameters:<a class="headerlink" href="#id18" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+<section id="id19">
+<h2>Returns:<a class="headerlink" href="#id19" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+<section id="id20">
+<h2>Description:<a class="headerlink" href="#id20" title="Permalink to this heading"></a></h2>
+<p>This method checks if the last operation performed was an equality operation by calling the <cite>get_history_sign</cite>
+method. If the result of the method is <cite>=</cite>, then it clears the history widget.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.disable_buttons">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">disable_buttons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#disable_buttons"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.disable_buttons" title="Permalink to this definition"></a></dt>
+<dd><p>&#64;brief Disables or enables all buttons in the calculator.
+&#64;param disable A boolean value indicating whether to disable (True) or enable (False) the buttons.
+This function disables or enables all buttons in the calculator based on the value of the 
+‘disable’ parameter. If ‘disable’ is True, all buttons are disabled and their color is changed. 
+If ‘disable’ is False, all buttons are enabled and their color is changed back to the original color.
+&#64;return None</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.get_entry_number">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">get_entry_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#get_entry_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.get_entry_number" title="Permalink to this definition"></a></dt>
+<dd><p>&#64;brief Gets the number from entry from the calculator display.
+&#64;return The number from the calculator display.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.get_entry_text_width">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">get_entry_text_width</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#get_entry_text_width"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.get_entry_text_width" title="Permalink to this definition"></a></dt>
+<dd><p>&#64;brief Gets the width of the entry text.
+&#64;return The width of the entry text.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.get_history_number">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">get_history_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#get_history_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.get_history_number" title="Permalink to this definition"></a></dt>
+<dd><p>&#64;brief Gets the number from history from the calculator display.
+&#64;return The number from the calculator display.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.get_history_sign">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">get_history_sign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#get_history_sign"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.get_history_sign" title="Permalink to this definition"></a></dt>
+<dd><p>&#64;brief Gets the math sign from history from the calculator display.
+&#64;return The math sign from the calculator display.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.get_history_text_width">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">get_history_text_width</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#get_history_text_width"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.get_history_text_width" title="Permalink to this definition"></a></dt>
+<dd><p>&#64;brief Gets the width of the history text.
+&#64;return The width of the history text.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.math_operation">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">math_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">math_sign</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#math_operation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.math_operation" title="Permalink to this definition"></a></dt>
+<dd><p>&#64;brief Performs a math operation.
+&#64;param math_sign The math sign to perform.
+&#64;return None</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.print_key_event">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">print_key_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#print_key_event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.print_key_event" title="Permalink to this definition"></a></dt>
+<dd><p>Simulates a button click on the calculator UI based on the user’s keyboard input.</p>
+<section id="id21">
+<h2>Parameters:<a class="headerlink" href="#id21" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>event<span class="classifier">str</span></dt><dd><p>A string representing the keyboard input event triggered by the user.</p>
+</dd>
+</dl>
+</section>
+<section id="id22">
+<h2>Returns:<a class="headerlink" href="#id22" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+<section id="id23">
+<h2>Description:<a class="headerlink" href="#id23" title="Permalink to this heading"></a></h2>
+<p>This method maps the user’s keyboard input to the corresponding button on the calculator’s UI and simulates a
+button click event. If the input is a number or operator key, the corresponding button is clicked and the
+calculator’s display is updated. If the input is a non-number key (e.g., Enter, Delete), the corresponding
+calculator button is clicked, triggering the appropriate action.</p>
+</section>
+<section id="examples">
+<h2>Examples:<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">calc</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc</span><span class="o">.</span><span class="n">print_key_event</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+<span class="go"># Clicks the Button_1 on the calculator&#39;s UI and updates the display to show &#39;1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc</span><span class="o">.</span><span class="n">print_key_event</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
+<span class="go"># Clicks the Button_Plus on the calculator&#39;s UI and updates the display accordingly</span>
+</pre></div>
+</div>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.register_keyboard_event">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">register_keyboard_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#register_keyboard_event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.register_keyboard_event" title="Permalink to this definition"></a></dt>
+<dd><p>Register a function to be called when a key on the keyboard is pressed.</p>
+<section id="id24">
+<h2>Parameters:<a class="headerlink" href="#id24" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+<section id="id25">
+<h2>Returns:<a class="headerlink" href="#id25" title="Permalink to this heading"></a></h2>
+<p>None</p>
+</section>
+<section id="id26">
+<h2>Description:<a class="headerlink" href="#id26" title="Permalink to this heading"></a></h2>
+<p>This method uses the <cite>on_press</cite> method of the <cite>keyboard</cite> library to register a lambda function that takes a <cite>keyboard</cite>
+event as input and passes it to the <cite>print_key_event</cite> method of the current instance of the class.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.remove_error">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">remove_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#remove_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.remove_error" title="Permalink to this definition"></a></dt>
+<dd><p>&#64;brief Removes the error message from the calculator UI.
+&#64;return None</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.remove_trailing_zeroes">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">remove_trailing_zeroes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#remove_trailing_zeroes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.remove_trailing_zeroes" title="Permalink to this definition"></a></dt>
+<dd><p>Remove trailing zeroes from a given number string.</p>
+<section id="id27">
+<h2>Parameters:<a class="headerlink" href="#id27" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>number<span class="classifier">str</span></dt><dd><p>A string representing the number to remove trailing zeroes from.</p>
+</dd>
+</dl>
+</section>
+<section id="id28">
+<h2>Returns:<a class="headerlink" href="#id28" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>str</dt><dd><p>A string representing the number with trailing zeroes removed.</p>
+</dd>
+</dl>
+</section>
+<section id="id29">
+<h2>Description:<a class="headerlink" href="#id29" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><p>This function takes a number string as input, converts it to a float, and then back to a string with trailing zeroes
+removed. If the input string represents an error (i.e. “error”), the function returns the input string.</p>
+</div></blockquote>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.resizeEvent">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">resizeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#resizeEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.resizeEvent" title="Permalink to this definition"></a></dt>
+<dd><p>&#64;brief Handles the resize event for the calculator.
+&#64;param event The resize event to handle.
+&#64;return None</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.return_button_color">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">return_button_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">button</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#return_button_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.return_button_color" title="Permalink to this definition"></a></dt>
+<dd><p>&#64;brief Returns the color of a button.
+&#64;param button The button to get the color of.
+&#64;return The color of the button.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.show_error">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">show_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#show_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.show_error" title="Permalink to this definition"></a></dt>
+<dd><p>&#64;brief Displays an error message on the calculator UI.
+&#64;return None</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="documentation.unary_calculate">
+<span class="sig-prename descclassname"><span class="pre">documentation.</span></span><span class="sig-name descname"><span class="pre">unary_calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">math_sign</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/documentation.html#unary_calculate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#documentation.unary_calculate" title="Permalink to this definition"></a></dt>
+<dd><p>&#64;brief Calculates the result of the unary operation and displays it on the calculator UI.
+&#64;This function retrieves the operand and the operator from the calculator entry.
+It then calculates the result of the unary operation and displays it on the calculator entry.
+&#64;return The calculated result as a string, or None if an error occurred during the calculation.</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, DenysChernenko.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

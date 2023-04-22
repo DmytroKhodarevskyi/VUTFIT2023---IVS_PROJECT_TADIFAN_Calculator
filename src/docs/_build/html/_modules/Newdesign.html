@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Newdesign &mdash; Documentation  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">Newdesign</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for Newdesign</h1><div class="highlight"><pre>
+<span></span>
+
+<span class="c1">################################################################################</span>
+<span class="c1">## Form generated from reading UI file &#39;My_design.ui&#39;</span>
+<span class="c1">##</span>
+<span class="c1">## Created by: Qt User Interface Compiler version 6.4.3</span>
+<span class="c1">##</span>
+<span class="c1">## WARNING! All changes made in this file will be lost when recompiling UI file!</span>
+<span class="c1">################################################################################</span>
+
+<span class="kn">from</span> <span class="nn">PySide6.QtCore</span> <span class="kn">import</span> <span class="p">(</span><span class="n">QCoreApplication</span><span class="p">,</span> <span class="n">QDate</span><span class="p">,</span> <span class="n">QDateTime</span><span class="p">,</span> <span class="n">QLocale</span><span class="p">,</span>
+    <span class="n">QMetaObject</span><span class="p">,</span> <span class="n">QObject</span><span class="p">,</span> <span class="n">QPoint</span><span class="p">,</span> <span class="n">QRect</span><span class="p">,</span>
+    <span class="n">QSize</span><span class="p">,</span> <span class="n">QTime</span><span class="p">,</span> <span class="n">QUrl</span><span class="p">,</span> <span class="n">Qt</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">PySide6.QtGui</span> <span class="kn">import</span> <span class="p">(</span><span class="n">QBrush</span><span class="p">,</span> <span class="n">QColor</span><span class="p">,</span> <span class="n">QConicalGradient</span><span class="p">,</span> <span class="n">QCursor</span><span class="p">,</span>
+    <span class="n">QFont</span><span class="p">,</span> <span class="n">QFontDatabase</span><span class="p">,</span> <span class="n">QGradient</span><span class="p">,</span> <span class="n">QIcon</span><span class="p">,</span>
+    <span class="n">QImage</span><span class="p">,</span> <span class="n">QKeySequence</span><span class="p">,</span> <span class="n">QLinearGradient</span><span class="p">,</span> <span class="n">QPainter</span><span class="p">,</span>
+    <span class="n">QPalette</span><span class="p">,</span> <span class="n">QPixmap</span><span class="p">,</span> <span class="n">QRadialGradient</span><span class="p">,</span> <span class="n">QTransform</span><span class="p">,</span> <span class="n">QShortcut</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">PySide6.QtWidgets</span> <span class="kn">import</span> <span class="p">(</span><span class="n">QApplication</span><span class="p">,</span> <span class="n">QFrame</span><span class="p">,</span> <span class="n">QGridLayout</span><span class="p">,</span> <span class="n">QLabel</span><span class="p">,</span>
+    <span class="n">QLineEdit</span><span class="p">,</span> <span class="n">QMainWindow</span><span class="p">,</span> <span class="n">QPushButton</span><span class="p">,</span> <span class="n">QSizePolicy</span><span class="p">,</span>
+    <span class="n">QVBoxLayout</span><span class="p">,</span> <span class="n">QWidget</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">files_rc</span>
+
+<div class="viewcode-block" id="Ui_MainWindow"><a class="viewcode-back" href="../Newdesign.html#Newdesign.Ui_MainWindow">[docs]</a><span class="k">class</span> <span class="nc">Ui_MainWindow</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Ui_MainWindow.setupUi"><a class="viewcode-back" href="../Newdesign.html#Newdesign.Ui_MainWindow.setupUi">[docs]</a>    <span class="k">def</span> <span class="nf">setupUi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">MainWindow</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">MainWindow</span><span class="o">.</span><span class="n">objectName</span><span class="p">():</span>
+            <span class="n">MainWindow</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">)</span>
+        <span class="n">MainWindow</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+        <span class="n">font</span> <span class="o">=</span> <span class="n">QFont</span><span class="p">()</span>
+        <span class="n">font</span><span class="o">.</span><span class="n">setFamilies</span><span class="p">([</span><span class="sa">u</span><span class="s2">&quot;Rubik&quot;</span><span class="p">])</span>
+        <span class="n">font</span><span class="o">.</span><span class="n">setPointSize</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+        <span class="n">font</span><span class="o">.</span><span class="n">setBold</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">MainWindow</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="n">icon</span> <span class="o">=</span> <span class="n">QIcon</span><span class="p">()</span>
+        <span class="n">icon</span><span class="o">.</span><span class="n">addFile</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;:/icons/icons/free-icon-calculator-7378252.png&quot;</span><span class="p">,</span> <span class="n">QSize</span><span class="p">(),</span> <span class="n">QIcon</span><span class="o">.</span><span class="n">Normal</span><span class="p">,</span> <span class="n">QIcon</span><span class="o">.</span><span class="n">Off</span><span class="p">)</span>
+        <span class="n">MainWindow</span><span class="o">.</span><span class="n">setWindowIcon</span><span class="p">(</span><span class="n">icon</span><span class="p">)</span>
+        <span class="n">MainWindow</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;QWidget {</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	color: white;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	background-color: rgb(18, 18, 18);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	font-family: Rubik;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	font-size: 16pt; </span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	font-weight: 600;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span> <span class="o">=</span> <span class="n">QWidget</span><span class="p">(</span><span class="n">MainWindow</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;centralwidget&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout_2</span> <span class="o">=</span> <span class="n">QVBoxLayout</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout_2</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;verticalLayout_2&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">history</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;history&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy</span> <span class="o">=</span> <span class="n">QSizePolicy</span><span class="p">(</span><span class="n">QSizePolicy</span><span class="o">.</span><span class="n">Expanding</span><span class="p">,</span> <span class="n">QSizePolicy</span><span class="o">.</span><span class="n">Maximum</span><span class="p">)</span>
+        <span class="n">sizePolicy</span><span class="o">.</span><span class="n">setHorizontalStretch</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">sizePolicy</span><span class="o">.</span><span class="n">setVerticalStretch</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">sizePolicy</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">33</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">setMaximumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">16777215</span><span class="p">,</span> <span class="mi">16777215</span><span class="p">))</span>
+        <span class="n">font1</span> <span class="o">=</span> <span class="n">QFont</span><span class="p">()</span>
+        <span class="n">font1</span><span class="o">.</span><span class="n">setFamilies</span><span class="p">([</span><span class="sa">u</span><span class="s2">&quot;Bahnschrift&quot;</span><span class="p">])</span>
+        <span class="n">font1</span><span class="o">.</span><span class="n">setPointSize</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+        <span class="n">font1</span><span class="o">.</span><span class="n">setBold</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;color: gray;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;background-color: rgb(29, 29, 29);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;font-family: Bahnschrift;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;border-radius: 8px;&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">setAlignment</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignRight</span><span class="o">|</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignTrailing</span><span class="o">|</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignVCenter</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout_2</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span> <span class="o">=</span> <span class="n">QLineEdit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;entry&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">83</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">setMaximumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">16777215</span><span class="p">,</span> <span class="mi">83</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;font-size: 40pt;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;background-color: rgb(30, 30, 30);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;border: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;   &quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">setMaxLength</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">setAlignment</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignRight</span><span class="o">|</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignTrailing</span><span class="o">|</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignVCenter</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">setReadOnly</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout_2</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span> <span class="o">=</span> <span class="n">QFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;ButtonsGrid&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">sizePolicy1</span> <span class="o">=</span> <span class="n">QSizePolicy</span><span class="p">(</span><span class="n">QSizePolicy</span><span class="o">.</span><span class="n">Preferred</span><span class="p">,</span> <span class="n">QSizePolicy</span><span class="o">.</span><span class="n">Preferred</span><span class="p">)</span>
+        <span class="n">sizePolicy1</span><span class="o">.</span><span class="n">setHorizontalStretch</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">sizePolicy1</span><span class="o">.</span><span class="n">setVerticalStretch</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">sizePolicy1</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span> <span class="o">=</span> <span class="n">QGridLayout</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">setSpacing</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Buttons_Container_3&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">setContentsMargins</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_8</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_8</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_8&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span> <span class="o">=</span> <span class="n">QSizePolicy</span><span class="p">(</span><span class="n">QSizePolicy</span><span class="o">.</span><span class="n">Expanding</span><span class="p">,</span> <span class="n">QSizePolicy</span><span class="o">.</span><span class="n">Expanding</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHorizontalStretch</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setVerticalStretch</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_8</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_8</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_8</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_8</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_8</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #222;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #444;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #Dff;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_8</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_8</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_7</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_7</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_7&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_7</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_7</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_7</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_7</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_7</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #222;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #444;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #Dff;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_7</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_7</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_6</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_6</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_6&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_6</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_6</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_6</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_6</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_6</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #222;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #444;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #Dff;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_6</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_6</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Power</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Power</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_Power&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Power</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Power</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Power</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Power</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Power</span><span class="o">.</span><span class="n">setMouseTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Power</span><span class="o">.</span><span class="n">setTabletTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Power</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #333333;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #0094C6;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #888;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	/*color: #333;*/</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="n">icon1</span> <span class="o">=</span> <span class="n">QIcon</span><span class="p">()</span>
+        <span class="n">icon1</span><span class="o">.</span><span class="n">addFile</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;:/icons/icons/power.png&quot;</span><span class="p">,</span> <span class="n">QSize</span><span class="p">(),</span> <span class="n">QIcon</span><span class="o">.</span><span class="n">Normal</span><span class="p">,</span> <span class="n">QIcon</span><span class="o">.</span><span class="n">Off</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Power</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">icon1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Power</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Power</span><span class="o">.</span><span class="n">setCheckable</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Power</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Power</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Power</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_3</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_3</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_3&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_3</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_3</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_3</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_3</span><span class="o">.</span><span class="n">setSizeIncrement</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_3</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_3</span><span class="o">.</span><span class="n">setMouseTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_3</span><span class="o">.</span><span class="n">setTabletTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_3</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #222;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #444;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #Dff;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_3</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_3</span><span class="o">.</span><span class="n">setCheckable</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_3</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_3</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Divide</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Divide</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_Divide&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Divide</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Divide</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Divide</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Divide</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Divide</span><span class="o">.</span><span class="n">setMouseTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Divide</span><span class="o">.</span><span class="n">setTabletTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Divide</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #333333;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #0094C6;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #888;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	color: #333;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Divide</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Divide</span><span class="o">.</span><span class="n">setCheckable</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Divide</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Divide</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Divide</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_2</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_2</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_2&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_2</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_2</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_2</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_2</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_2</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #222;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #444;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #Dff;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_2</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_2</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Plus</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Plus</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_Plus&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Plus</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Plus</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Plus</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Plus</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Plus</span><span class="o">.</span><span class="n">setMouseTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Plus</span><span class="o">.</span><span class="n">setTabletTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Plus</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #333333;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #0094C6;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #888;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	color: #333;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Plus</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Plus</span><span class="o">.</span><span class="n">setCheckable</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Plus</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Plus</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Plus</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_9</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_9</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_9&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_9</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_9</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_9</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_9</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_9</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #222;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #444;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #Dff;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_9</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_9</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Minus</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Minus</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_Minus&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Minus</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Minus</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Minus</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Minus</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Minus</span><span class="o">.</span><span class="n">setMouseTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Minus</span><span class="o">.</span><span class="n">setTabletTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Minus</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #333333;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #0094C6;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #888;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	color: #333;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Minus</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Minus</span><span class="o">.</span><span class="n">setCheckable</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Minus</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Minus</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Minus</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_4</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_4</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_4&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_4</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_4</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_4</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_4</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_4</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #222;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #444;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #Dff;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_4</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_4</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Factorial</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Factorial</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_Factorial&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Factorial</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Factorial</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Factorial</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Factorial</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Factorial</span><span class="o">.</span><span class="n">setMouseTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Factorial</span><span class="o">.</span><span class="n">setTabletTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Factorial</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #333333;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #0094C6;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #888;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	/*color: #333;*/</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Factorial</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Factorial</span><span class="o">.</span><span class="n">setCheckable</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Factorial</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Factorial</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Factorial</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Root</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Root</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_Root&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Root</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Root</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Root</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Root</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Root</span><span class="o">.</span><span class="n">setMouseTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Root</span><span class="o">.</span><span class="n">setTabletTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Root</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #333333;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #0094C6;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #888;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	/*color: #333;*/</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="n">icon2</span> <span class="o">=</span> <span class="n">QIcon</span><span class="p">()</span>
+        <span class="n">icon2</span><span class="o">.</span><span class="n">addFile</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;:/icons/icons/square-root-of-x-mathematical-signs.png&quot;</span><span class="p">,</span> <span class="n">QSize</span><span class="p">(),</span> <span class="n">QIcon</span><span class="o">.</span><span class="n">Normal</span><span class="p">,</span> <span class="n">QIcon</span><span class="o">.</span><span class="n">Off</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Root</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">icon2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Root</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Root</span><span class="o">.</span><span class="n">setCheckable</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Root</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Root</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Root</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Multiply</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Multiply</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_Multiply&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Multiply</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Multiply</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Multiply</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Multiply</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Multiply</span><span class="o">.</span><span class="n">setMouseTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Multiply</span><span class="o">.</span><span class="n">setTabletTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Multiply</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #333333;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #0094C6;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #888;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	color: #333;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Multiply</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Multiply</span><span class="o">.</span><span class="n">setCheckable</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Multiply</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Multiply</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Multiply</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_5</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_5</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_5&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_5</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_5</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_5</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_5</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_5</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #222;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #444;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #Dff;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_5</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_5</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_ce</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_ce</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_ce&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_ce</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_ce</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_ce</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #333;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #999;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #bbb;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	color: #121212</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_ce</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_ce</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_ce</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Comma</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Comma</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_Comma&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Comma</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Comma</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Comma</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Comma</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Comma</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #222;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #444;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #Dff;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Comma</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Comma</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Comma</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_Equal&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span><span class="o">.</span><span class="n">setMouseTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span><span class="o">.</span><span class="n">setTabletTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #08a;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #333333;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #0ac;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #0cf;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	color: #fff;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span><span class="o">.</span><span class="n">setCheckable</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_c</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_c</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_c&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_c</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_c</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_c</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	color: #333;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #999;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #bbb;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	color: #121212</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_c</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_c</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_c</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_0</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_0</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_0&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_0</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_0</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_0</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_0</span><span class="o">.</span><span class="n">setSizeIncrement</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_0</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_0</span><span class="o">.</span><span class="n">setToolTipDuration</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_0</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #222;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #444;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #Dff;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_0</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_0</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Sign</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Sign</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_Sign&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Sign</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Sign</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Sign</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Sign</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Sign</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #333;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #999;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #bbb;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	color: #121212</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Sign</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Sign</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Sign</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_backspace</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_backspace</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_backspace&quot;</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_backspace</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_backspace</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_backspace</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #333333;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #888;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	color: #Dff;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">icon3</span> <span class="o">=</span> <span class="n">QIcon</span><span class="p">()</span>
+        <span class="n">icon3</span><span class="o">.</span><span class="n">addFile</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;:/icons/icons/outline_backspace_white_24dp.png&quot;</span><span class="p">,</span> <span class="n">QSize</span><span class="p">(),</span> <span class="n">QIcon</span><span class="o">.</span><span class="n">Normal</span><span class="p">,</span> <span class="n">QIcon</span><span class="o">.</span><span class="n">Off</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_backspace</span><span class="o">.</span><span class="n">setIcon</span><span class="p">(</span><span class="n">icon3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_backspace</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_backspace</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_backspace</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_1</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_1</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Button_1&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_1</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">sizePolicy2</span><span class="o">.</span><span class="n">setHeightForWidth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_1</span><span class="o">.</span><span class="n">sizePolicy</span><span class="p">()</span><span class="o">.</span><span class="n">hasHeightForWidth</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_1</span><span class="o">.</span><span class="n">setSizePolicy</span><span class="p">(</span><span class="n">sizePolicy2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_1</span><span class="o">.</span><span class="n">setMinimumSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_1</span><span class="o">.</span><span class="n">setSizeIncrement</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_1</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_1</span><span class="o">.</span><span class="n">setMouseTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_1</span><span class="o">.</span><span class="n">setTabletTracking</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_1</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;QPushButton{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-bottom: 2px solid rgb(0, 148, 198);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-left: 1rem solid rgb(0, 0, 0);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-top: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    border-right: none;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;width: 5px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    color: #FFF;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #222;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-radius: 10px;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:hover{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #444;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(128, 128, 128);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;QPushButton:pressed{</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;    background-color: #666;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;	border-bottom: 2px solid rgb(255, 255, 255);</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;color: #Dff;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;}&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_1</span><span class="o">.</span><span class="n">setIconSize</span><span class="p">(</span><span class="n">QSize</span><span class="p">(</span><span class="mi">105</span><span class="p">,</span> <span class="mi">105</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_1</span><span class="o">.</span><span class="n">setCheckable</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_1</span><span class="o">.</span><span class="n">setFlat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">setRowStretch</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">setRowStretch</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">setRowStretch</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">setRowStretch</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">setRowStretch</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">setColumnStretch</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">setColumnStretch</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">setColumnStretch</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">setColumnStretch</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Buttons_Container_3</span><span class="o">.</span><span class="n">setColumnStretch</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout_2</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ButtonsGrid</span><span class="p">)</span>
+
+        <span class="n">MainWindow</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">retranslateUi</span><span class="p">(</span><span class="n">MainWindow</span><span class="p">)</span>
+
+        <span class="n">QMetaObject</span><span class="o">.</span><span class="n">connectSlotsByName</span><span class="p">(</span><span class="n">MainWindow</span><span class="p">)</span></div>
+    <span class="c1"># setupUi</span>
+
+<div class="viewcode-block" id="Ui_MainWindow.retranslateUi"><a class="viewcode-back" href="../Newdesign.html#Newdesign.Ui_MainWindow.retranslateUi">[docs]</a>    <span class="k">def</span> <span class="nf">retranslateUi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">MainWindow</span><span class="p">):</span>
+        <span class="n">MainWindow</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;Calculator&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_8</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;8&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+        <span class="c1"># self.Button_8.setShortcut(QCoreApplication.translate(&quot;MainWindow&quot;, u&quot;8&quot;, None))</span>
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_7</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;7&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+        <span class="c1"># self.Button_7.setShortcut(QCoreApplication.translate(&quot;MainWindow&quot;, u&quot;7&quot;, None))</span>
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_6</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+        <span class="c1"># self.Button_6.setShortcut(QCoreApplication.translate(&quot;MainWindow&quot;, u&quot;6&quot;, None))</span>
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Power</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_3</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+        <span class="c1"># self.Button_3.setShortcut(QCoreApplication.translate(&quot;MainWindow&quot;, u&quot;3&quot;, None))</span>
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Divide</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\u00f7</span><span class="s2">&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+        <span class="c1"># self.Button_Divide.setShortcut(QCoreApplication.translate(&quot;MainWindow&quot;, u&quot;/&quot;, None))</span>
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_2</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+        <span class="c1"># self.Button_2.setShortcut(QCoreApplication.translate(&quot;MainWindow&quot;, u&quot;2&quot;, None))</span>
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Plus</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+        <span class="c1"># self.Button_Plus.setShortcut(QCoreApplication.translate(&quot;MainWindow&quot;, u&quot;+&quot;, None))</span>
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_9</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;9&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+        <span class="c1"># self.Button_9.setShortcut(QCoreApplication.translate(&quot;MainWindow&quot;, u&quot;9&quot;, None))</span>
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Minus</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+        <span class="c1"># self.Button_Minus.setShortcut(QCoreApplication.translate(&quot;MainWindow&quot;, u&quot;-&quot;, None))</span>
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_4</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+        <span class="c1"># self.Button_4.setShortcut(QCoreApplication.translate(&quot;MainWindow&quot;, u&quot;4&quot;, None))</span>
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Factorial</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;x!&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Root</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Multiply</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\u00d7</span><span class="s2">&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+        <span class="c1"># self.Button_Multiply.setShortcut(QCoreApplication.translate(&quot;MainWindow&quot;, u&quot;*&quot;, None))</span>
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_5</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+        <span class="c1"># self.Button_5.setShortcut(QCoreApplication.translate(&quot;MainWindow&quot;, u&quot;5&quot;, None))</span>
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_ce</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;CE&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Comma</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+
+        <span class="k">for</span> <span class="n">sc</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">):</span>
+            <span class="n">QShortcut</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Button_Comma</span><span class="p">)</span><span class="o">.</span><span class="n">activated</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Comma</span><span class="o">.</span><span class="n">animateClick</span><span class="p">)</span>
+
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+
+        <span class="k">for</span> <span class="n">sc</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;Enter&#39;</span><span class="p">,</span> <span class="s1">&#39;Return&#39;</span><span class="p">):</span>
+                <span class="n">QShortcut</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span><span class="p">)</span><span class="o">.</span><span class="n">activated</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Button_Equal</span><span class="o">.</span><span class="n">animateClick</span><span class="p">)</span>
+
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_c</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_0</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+        <span class="c1"># self.Button_0.setShortcut(QCoreApplication.translate(&quot;MainWindow&quot;, u&quot;0&quot;, None))</span>
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_Sign</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\u00b1</span><span class="s2">&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_backspace</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+        <span class="c1"># self.Button_backspace.setShortcut(QCoreApplication.translate(&quot;MainWindow&quot;, u&quot;Backspace&quot;, None))</span>
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Button_1</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">QCoreApplication</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s2">&quot;MainWindow&quot;</span><span class="p">,</span> <span class="sa">u</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span></div></div>
+<span class="c1">#if QT_CONFIG(shortcut)</span>
+        <span class="c1"># self.Button_1.setShortcut(QCoreApplication.translate(&quot;MainWindow&quot;, u&quot;1&quot;, None))</span>
+<span class="c1">#endif // QT_CONFIG(shortcut)</span>
+    <span class="c1"># retranslateUi</span>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, DenysChernenko.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
