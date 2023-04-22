@@ -125,33 +125,168 @@ class TestGUI(unittest.TestCase):
         self.assertEqual(self.calculator.ui.entry.text(), "4")
 
         # Check if the expression in the history is correct
-        self.assertEqual(self.calculator.ui.history.text(), "1,5 + 2,5 =")
+        self.assertEqual(self.calculator.ui.history.text(), "1,5 +  2,5 =")
         self.calculator.clear_all()
 
-    # def test_calculations_with_points(self):
-    #
-    #     # Checking for two digit with point and one digit without point
-    #     self.calculator.add_number("44")
-    #     self.calculator.add_point()
-    #     self.calculator.add_number("99")
-    #     self.calculator.add_history(" + ")
-    #     self.calculator.add_number("6")
-    #     self.calculator.add_point()
-    #     self.calculator.add_number("99")
-    #     self.calculator.calculate()
-    #     self.assertEqual(self.calculator.ui.entry.text(), "51,98")
-    #     self.calculator.clear_all()
-    #
-    #     # Checking for one digit with point and two digit with point
-    #     self.calculator.add_number("5")
-    #     self.calculator.add_point()
-    #     self.calculator.add_number("99")
-    #     self.calculator.add_history(" + ")
-    #     self.calculator.add_number("53")
-    #     self.calculator.add_point()
-    #     self.calculator.add_number("99")
-    #     self.calculator.calculate()
-    #     self.assertEqual(self.calculator.ui.entry.text(), "59,98")
+    def test_calculations_with_points(self):
+
+        # Checking for two digit with point and one digit without point
+        self.calculator.add_number("44")
+        self.calculator.add_point()
+        self.calculator.add_number("99")
+        self.calculator.add_history(" + ")
+        self.calculator.add_number("6")
+        self.calculator.add_point()
+        self.calculator.add_number("99")
+        self.calculator.binary_calculate()
+        self.assertEqual(self.calculator.ui.entry.text(), "51,98")
+        self.calculator.clear_all()
+
+        # Checking for one digit with point and two digit with point
+        self.calculator.add_number("5")
+        self.calculator.add_point()
+        self.calculator.add_number("99")
+        self.calculator.add_history(" + ")
+        self.calculator.add_number("53")
+        self.calculator.add_point()
+        self.calculator.add_number("99")
+        self.calculator.binary_calculate()
+        self.assertEqual(self.calculator.ui.entry.text(), "59,98")
+        self.calculator.clear_all()
+
+    def test_simple_for_unary_calculate_factorial(self):
+        self.calculator.add_number("5")
+        self.calculator.math_operation(" !")
+        self.assertEqual(self.calculator.ui.entry.text(), "120")
+        self.assertEqual(self.calculator.ui.history.text(), "5 ! ")
+        self.calculator.clear_all()
+
+        self.calculator.add_number("0")
+        self.calculator.math_operation(" !")
+        self.assertEqual(self.calculator.ui.entry.text(), "1")
+        self.assertEqual(self.calculator.ui.history.text(), "0 ! ")
+        self.calculator.clear_all()
+
+        self.calculator.add_number("1")
+        self.calculator.math_operation(" !")
+        self.assertEqual(self.calculator.ui.entry.text(), "1")
+        self.assertEqual(self.calculator.ui.history.text(), "1 ! ")
+        self.calculator.clear_all()
+
+
+    def test_simple_for_unary_calculate_square_root(self):
+        self.calculator.add_number("4")
+        self.calculator.math_operation(" √")
+        self.assertEqual(self.calculator.ui.entry.text(), "2")
+        self.assertEqual(self.calculator.ui.history.text(), " √4 ")
+        self.calculator.clear_all()
+
+        self.calculator.add_number("0")
+        self.calculator.math_operation(" √")
+        self.assertEqual(self.calculator.ui.entry.text(), "0")
+        self.assertEqual(self.calculator.ui.history.text(), " √0 ")
+        self.calculator.clear_all()
+
+        self.calculator.add_number("1")
+        self.calculator.math_operation(" √")
+        self.assertEqual(self.calculator.ui.entry.text(), "1")
+        self.assertEqual(self.calculator.ui.history.text(), " √1 ")
+        self.calculator.clear_all()
+
+
+    def test_simple_for_binary_calculate_power(self):
+        self.calculator.add_number("4")
+        self.calculator.add_history(" ^ ")
+        self.calculator.add_number("2")
+        self.calculator.binary_calculate()
+        self.assertEqual(self.calculator.ui.entry.text(), "16")
+        self.assertEqual(self.calculator.ui.history.text(), "4 ^  2 =")
+        self.calculator.clear_all()
+
+
+        self.calculator.add_number("0")
+        self.calculator.add_history(" ^ ")
+        self.calculator.add_number("2")
+        self.calculator.binary_calculate()
+        self.assertEqual(self.calculator.ui.entry.text(), "0")
+        self.assertEqual(self.calculator.ui.history.text(), "0 ^  2 =")
+        self.calculator.clear_all()
+
+        self.calculator.add_number("3")
+        self.calculator.add_history(" ^ ")
+        self.calculator.add_number("9")
+        self.calculator.binary_calculate()
+        self.assertEqual(self.calculator.ui.entry.text(), "19683")
+        self.assertEqual(self.calculator.ui.history.text(), "3 ^  9 =")
+        self.calculator.clear_all()
+
+
+    def test_huge_numbers_unary(self):
+        self.calculator.add_number("12")
+        self.calculator.math_operation(" !")
+        self.assertEqual(self.calculator.ui.entry.text(), "479001600")
+        self.assertEqual(self.calculator.ui.history.text(), "12 ! ")
+        self.calculator.clear_all()
+
+
+        self.calculator.add_number("1000000")
+        self.calculator.math_operation(" √")
+        self.assertEqual(self.calculator.ui.entry.text(), "1000")
+        self.assertEqual(self.calculator.ui.history.text(), " √1000000 ")
+        self.calculator.clear_all()
+
+        self.calculator.add_number("360000")
+        self.calculator.math_operation(" √")
+        self.assertEqual(self.calculator.ui.entry.text(), "600")
+        self.assertEqual(self.calculator.ui.history.text(), " √360000 ")
+        self.calculator.clear_all()
+
+        self.calculator.add_number("10")
+        self.calculator.math_operation(" !")
+        self.assertEqual(self.calculator.ui.entry.text(), "3628800")
+        self.assertEqual(self.calculator.ui.history.text(), "10 ! ")
+        self.calculator.clear_all()
+
+
+    def test_combinations(self):
+
+        self.calculator.add_number("2")
+        self.calculator.add_history(" - ")
+        self.calculator.add_number("3")
+        self.calculator.binary_calculate()
+        self.assertEqual(self.calculator.ui.entry.text(), "-1")
+        self.assertEqual(self.calculator.ui.history.text(), "2 -  3 =")
+        self.calculator.add_history(" + ")
+        self.assertEqual(self.calculator.ui.history.text(), "-1 + ")
+        self.assertEqual(self.calculator.ui.entry.text(), "0")
+        self.calculator.add_number("2")
+        self.assertEqual(self.calculator.ui.entry.text(), "2")
+        self.calculator.binary_calculate()
+        self.assertEqual(self.calculator.ui.entry.text(), "1")
+        self.calculator.add_history(" + ")
+        self.calculator.add_number("5")
+        self.calculator.math_operation(" !")
+        self.assertEqual(self.calculator.ui.entry.text(), "120")
+        self.calculator.binary_calculate()
+        self.assertEqual(self.calculator.ui.entry.text(), "121")
+        self.calculator.clear_all()
+
+
+        self.calculator.add_number("2")
+        self.calculator.add_history(" + ")
+        self.calculator.add_number("3")
+        self.calculator.binary_calculate()
+        self.assertEqual(self.calculator.ui.entry.text(), "5")
+        self.assertEqual(self.calculator.ui.history.text(), "2 +  3 =")
+        self.calculator.math_operation(" !")
+        self.assertEqual(self.calculator.ui.history.text(), "120 !")
+        self.assertEqual(self.calculator.ui.entry.text(), "0")
+        self.calculator.add_history(" + ")
+        self.calculator.add_number("2")
+        self.calculator.binary_calculate()
+        self.assertEqual(self.calculator.ui.entry.text(), "122")
+        self.calculator.clear_all()
+
 
 
 class TestMathLib(unittest.TestCase):
@@ -215,7 +350,7 @@ class TestMathLib(unittest.TestCase):
 
         def test_mul(self):
             # Checking if the mul function is working correctly (simple numbers)
-            self.assertEqual(Calc_Library.Multiply(3, 5), 15)
+            self.assertEqual(Calc_Library.Multiply(3, 5),15)
             self.assertEqual(Calc_Library.Multiply(4, -6), -24)
             self.assertEqual(Calc_Library.Multiply(-1, 10), -10)
             self.assertEqual(Calc_Library.Multiply(-2, -6), 12)
@@ -261,9 +396,9 @@ class TestMathLib(unittest.TestCase):
         def test_divide_huge_numbers(self):
             # Checking if the divide function is working correctly (huge numbers)
             self.assertEqual(Calc_Library.Divide(999999999, 888888888), 1.125)
-            self.assertEqual(Calc_Library.Divide(123456789, 987654321), 0.1249999988609375)
-            self.assertEqual(Calc_Library.Divide(-123456789, 987654321), -0.1249999988609375)
-            self.assertEqual(Calc_Library.Divide(-123456789, -987654321), 0.1249999988609375)
+            self.assertEqual(Calc_Library.Divide(123456789, 987654321), 0.125)
+            self.assertEqual(Calc_Library.Divide(-123456789, 987654321), -0.125)
+            self.assertEqual(Calc_Library.Divide(-123456789, -987654321), 0.125)
 
         def test_divide_by_zero(self):
             with self.assertRaises(ZeroDivisionError):
