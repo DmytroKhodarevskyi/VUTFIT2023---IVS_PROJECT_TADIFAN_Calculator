@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>documentation &mdash; Documentation  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">documentation</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for documentation</h1><div class="highlight"><pre>
+<span></span>
+
+
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    @brief Initializes the documentation class.</span>
+<span class="sd">    @return None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="print_key_event"><a class="viewcode-back" href="../documentation.html#documentation.print_key_event">[docs]</a><span class="k">def</span> <span class="nf">print_key_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Simulates a button click on the calculator UI based on the user&#39;s keyboard input.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    event : str</span>
+<span class="sd">        A string representing the keyboard input event triggered by the user.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method maps the user&#39;s keyboard input to the corresponding button on the calculator&#39;s UI and simulates a</span>
+<span class="sd">    button click event. If the input is a number or operator key, the corresponding button is clicked and the</span>
+<span class="sd">    calculator&#39;s display is updated. If the input is a non-number key (e.g., Enter, Delete), the corresponding</span>
+<span class="sd">    calculator button is clicked, triggering the appropriate action.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">    ---------</span>
+<span class="sd">    &gt;&gt;&gt; calc = Calculator()</span>
+<span class="sd">    &gt;&gt;&gt; calc.print_key_event(&#39;1&#39;)</span>
+<span class="sd">    # Clicks the Button_1 on the calculator&#39;s UI and updates the display to show &#39;1&#39;</span>
+<span class="sd">    &gt;&gt;&gt; calc.print_key_event(&#39;+&#39;)</span>
+<span class="sd">    # Clicks the Button_Plus on the calculator&#39;s UI and updates the display accordingly</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="register_keyboard_event"><a class="viewcode-back" href="../documentation.html#documentation.register_keyboard_event">[docs]</a><span class="k">def</span> <span class="nf">register_keyboard_event</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Register a function to be called when a key on the keyboard is pressed.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method uses the `on_press` method of the `keyboard` library to register a lambda function that takes a `keyboard`</span>
+<span class="sd">    event as input and passes it to the `print_key_event` method of the current instance of the class.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="add_number"><a class="viewcode-back" href="../documentation.html#documentation.add_number">[docs]</a><span class="k">def</span> <span class="nf">add_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Button_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Add a number to the UI entry widget.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    Button_text : str</span>
+<span class="sd">        A string representing the number to be added to the UI entry widget.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method adds a number to the current text in the UI entry widget. If the current text in the UI entry widget is &quot;0&quot;,</span>
+<span class="sd">    the method replaces it with the `Button_text`. Otherwise, the method appends the `Button_text` to the current text in</span>
+<span class="sd">    the UI entry widget. After modifying the text in the UI entry widget, the method calls the `adjust_entry_font_size`</span>
+<span class="sd">    method to adjust the font size of the text if necessary.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="add_point"><a class="viewcode-back" href="../documentation.html#documentation.add_point">[docs]</a><span class="k">def</span> <span class="nf">add_point</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Add a decimal point to the UI entry widget.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method adds a decimal point (&quot; , &quot;) to the current text in the UI entry widget if one is not already present. If a</span>
+<span class="sd">    decimal point is already present, the method does nothing. After modifying the text in the UI entry widget, the method</span>
+<span class="sd">    calls the `adjust_entry_font_size` method to adjust the font size of the text if necessary.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="change_sign"><a class="viewcode-back" href="../documentation.html#documentation.change_sign">[docs]</a><span class="k">def</span> <span class="nf">change_sign</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Change the sign of the number in the UI entry widget.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method changes the sign of the number currently displayed in the UI entry widget by adding or removing a minus</span>
+<span class="sd">    sign (&quot;-&quot;). If the number is currently positive, the method adds a minus sign to make it negative. If the number is</span>
+<span class="sd">    currently negative, the method removes the minus sign to make it positive. If the number is currently zero, the method</span>
+<span class="sd">    does nothing.</span>
+
+<span class="sd">    After changing the sign of the number, the method updates the text in the UI entry widget to reflect the new value,</span>
+<span class="sd">    and calls the `adjust_entry_font_size` method to adjust the font size of the text if necessary.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="clear_all"><a class="viewcode-back" href="../documentation.html#documentation.clear_all">[docs]</a><span class="k">def</span> <span class="nf">clear_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Clear the UI entry widget and history, and reset other UI elements.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method clears the current value from the UI entry widget and sets it to zero. It also clears any existing</span>
+<span class="sd">    entries from the history list widget, and calls the `adjust_entry_font_size` method to adjust the font size of the</span>
+<span class="sd">    entry widget text if necessary.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="clear_entry"><a class="viewcode-back" href="../documentation.html#documentation.clear_entry">[docs]</a><span class="k">def</span> <span class="nf">clear_entry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Clear the UI entry widget.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method clears the current value from the UI entry widget and sets it to zero. It also calls the</span>
+<span class="sd">    `adjust_entry_font_size` method to adjust the font size of the entry widget text if necessary.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="backspace"><a class="viewcode-back" href="../documentation.html#documentation.backspace">[docs]</a><span class="k">def</span> <span class="nf">backspace</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Delete the last character from the UI entry widget.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method removes the last character from the text in the UI entry widget, if it is not already empty. If the entry</span>
+<span class="sd">    widget contains only a negative sign and no other digits, this method sets the widget value to zero.</span>
+
+<span class="sd">    Additionally, this method calls the `adjust_entry_font_size` method to adjust the font size of the entry widget text</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="clear_history_if_equality"><a class="viewcode-back" href="../documentation.html#documentation.clear_history_if_equality">[docs]</a><span class="k">def</span> <span class="nf">clear_history_if_equality</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Clears the history if the last operation performed was an equality operation.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method checks if the last operation performed was an equality operation by calling the `get_history_sign`</span>
+<span class="sd">    method. If the result of the method is `=`, then it clears the history widget.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="remove_trailing_zeroes"><a class="viewcode-back" href="../documentation.html#documentation.remove_trailing_zeroes">[docs]</a><span class="k">def</span> <span class="nf">remove_trailing_zeroes</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  Remove trailing zeroes from a given number string.</span>
+
+<span class="sd">  Parameters:</span>
+<span class="sd">  -----------</span>
+<span class="sd">  number : str</span>
+<span class="sd">    A string representing the number to remove trailing zeroes from.</span>
+
+<span class="sd">  Returns:</span>
+<span class="sd">  --------</span>
+<span class="sd">  str</span>
+<span class="sd">    A string representing the number with trailing zeroes removed.</span>
+
+<span class="sd">  Description:</span>
+<span class="sd">  ------------</span>
+<span class="sd">    This function takes a number string as input, converts it to a float, and then back to a string with trailing zeroes</span>
+<span class="sd">    removed. If the input string represents an error (i.e. &quot;error&quot;), the function returns the input string.</span>
+<span class="sd">   &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="get_entry_number"><a class="viewcode-back" href="../documentation.html#documentation.get_entry_number">[docs]</a><span class="k">def</span> <span class="nf">get_entry_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Converts the current text in the calculator&#39;s entry field to a number.</span>
+
+<span class="sd">     Parameters:</span>
+<span class="sd">     -----------</span>
+<span class="sd">     None</span>
+
+<span class="sd">     Returns:</span>
+<span class="sd">     --------</span>
+<span class="sd">     int or float:</span>
+<span class="sd">         The number representation of the current text in the entry field. If the text contains a decimal point,</span>
+<span class="sd">         it is returned as a float; otherwise, it is returned as an integer.</span>
+
+<span class="sd">     Description:</span>
+<span class="sd">     ------------</span>
+<span class="sd">     This method retrieves the text currently displayed in the calculator&#39;s entry field, strips any commas from it,</span>
+<span class="sd">     replaces commas with decimal points (to handle different locales), and then returns the resulting number. If the</span>
+<span class="sd">     number contains a decimal point, it is returned as a float; otherwise, it is returned as an integer.</span>
+<span class="sd">     &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="get_history_number"><a class="viewcode-back" href="../documentation.html#documentation.get_history_number">[docs]</a><span class="k">def</span> <span class="nf">get_history_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parses the first number from the history text in the calculator&#39;s display.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    Union[int, float, None]</span>
+<span class="sd">       The parsed number as an integer or float, or None if no number was found.</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method retrieves the text from the calculator&#39;s history display, removes any commas or leading/trailing spaces,</span>
+<span class="sd">    splits the text into words and attempts to convert the first word to a float or integer. If no number is found, None</span>
+<span class="sd">    is returned instead.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="get_history_sign"><a class="viewcode-back" href="../documentation.html#documentation.get_history_sign">[docs]</a><span class="k">def</span> <span class="nf">get_history_sign</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the last operator sign from the history field.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    Optional[str]</span>
+<span class="sd">        The last operator sign from the history field, or None if the history field is empty.</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method checks if the history field is not empty, removes any trailing commas from the text, splits the text by</span>
+<span class="sd">    whitespace, and returns the last element of the resulting list. If the resulting list is empty, the method returns</span>
+<span class="sd">    None.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+
+
+<div class="viewcode-block" id="get_entry_text_width"><a class="viewcode-back" href="../documentation.html#documentation.get_entry_text_width">[docs]</a><span class="k">def</span> <span class="nf">get_entry_text_width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculates the width (in pixels) of the current text in the calculator&#39;s entry field.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    int:</span>
+<span class="sd">        The width (in pixels) of the current text in the calculator&#39;s entry field.</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method uses the font metrics of the entry field&#39;s font to calculate the width (in pixels) of the current text in the</span>
+<span class="sd">    calculator&#39;s entry field. It returns this width as an integer value.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="get_history_text_width"><a class="viewcode-back" href="../documentation.html#documentation.get_history_text_width">[docs]</a><span class="k">def</span> <span class="nf">get_history_text_width</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Gets the width, in pixels, of the text in the calculator&#39;s history display.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    int:</span>
+<span class="sd">    The width, in pixels, of the text in the calculator&#39;s history display.</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method uses the font metrics of the calculator&#39;s history display to calculate the bounding rectangle around the</span>
+<span class="sd">    text in the display, and returns its width in pixels. This is useful for determining the amount of horizontal space</span>
+<span class="sd">    needed to display the entire history entry without truncation or overflow.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="binary_calculate"><a class="viewcode-back" href="../documentation.html#documentation.binary_calculate">[docs]</a><span class="k">def</span> <span class="nf">binary_calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">math_sign</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Binary calculation</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    math_sign : str</span>
+<span class="sd">        The math symbol to currently perform (from the binary type).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    the result of the operation</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    The function performs the operation requested from math_operation function</span>
+<span class="sd">    also operates from some possible calculator states and returns the result</span>
+<span class="sd">    of the operation</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="unary_calculate"><a class="viewcode-back" href="../documentation.html#documentation.unary_calculate">[docs]</a><span class="k">def</span> <span class="nf">unary_calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">math_sign</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Unary calculation</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    math_sign : str</span>
+<span class="sd">        The math symbol to currently perform (from the unary type).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    the result of the operation</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    The function performs the operation requested from math_operation function</span>
+<span class="sd">    also operates from some possible calculator states and returns the result</span>
+<span class="sd">    of the operation</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="show_error"><a class="viewcode-back" href="../documentation.html#documentation.show_error">[docs]</a><span class="k">def</span> <span class="nf">show_error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Show an error message in the entry field and disable all buttons.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    text: str</span>
+<span class="sd">        The error message to display.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method sets the maximum length of the entry field to the length of the error message, sets the text of the entry</span>
+<span class="sd">    field to the error message, adjusts the font size of the entry field to fit the text, and disables all buttons.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="remove_error"><a class="viewcode-back" href="../documentation.html#documentation.remove_error">[docs]</a><span class="k">def</span> <span class="nf">remove_error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Removes error message from the calculator&#39;s display if present.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method checks if the current text in the calculator&#39;s display is an error message (&#39;Undefined&#39; or &#39;Zero Division Error&#39;),</span>
+<span class="sd">    and if so, it sets the maximum length of the text to the default entry maximum length, sets the text to &#39;0&#39;, adjusts the</span>
+<span class="sd">    font size, and enables all calculator buttons.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="disable_buttons"><a class="viewcode-back" href="../documentation.html#documentation.disable_buttons">[docs]</a><span class="k">def</span> <span class="nf">disable_buttons</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Disables or enables calculator buttons based on the input argument.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    disable : bool</span>
+<span class="sd">    True to disable the buttons, False to enable them.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method disables or enables calculator buttons based on the input argument. If disable is True, it disables</span>
+<span class="sd">    all calculator buttons except the Sign, and changes their color to indicate that they are disabled. If disable is False,</span>
+<span class="sd">    it enables all calculator buttons and returns their color to normal.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="change_buttons_color"><a class="viewcode-back" href="../documentation.html#documentation.change_buttons_color">[docs]</a><span class="k">def</span> <span class="nf">change_buttons_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">css_color</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Changes the color of all calculator buttons to the specified CSS color.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    css_color : str</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+
+<span class="sd">    This method takes a CSS color as input and applies it to the background color and border of all calculator buttons.</span>
+<span class="sd">    This can be used to give a visual indication that the buttons are disabled or to change the color theme of the calculator</span>
+<span class="sd">    based on user preferences.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="return_button_color"><a class="viewcode-back" href="../documentation.html#documentation.return_button_color">[docs]</a><span class="k">def</span> <span class="nf">return_button_color</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">button</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Change the color of the calculator buttons back to their default color.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method changes the style sheet of each button to its default style sheet, except for the comma and sign buttons</span>
+<span class="sd">    which are set to the nums_style_sheet and sign_style_sheet, respectively.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+
+
+<div class="viewcode-block" id="adjust_entry_font_size"><a class="viewcode-back" href="../documentation.html#documentation.adjust_entry_font_size">[docs]</a><span class="k">def</span> <span class="nf">adjust_entry_font_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adjust the font size of the entry field to fit the text.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method iteratively reduces the font size of the entry field until the width of the text is less than the width</span>
+<span class="sd">    of the entry field minus 20 pixels. It then iteratively increases the font size of the entry field until the width of</span>
+<span class="sd">    the text is greater than the width of the entry field minus 20 pixels, or until the default font size is reached.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="resizeEvent"><a class="viewcode-back" href="../documentation.html#documentation.resizeEvent">[docs]</a><span class="k">def</span> <span class="nf">resizeEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adjusts the font size of the entry field to fit the available space when the widget is resized.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    event: QResizeEvent</span>
+<span class="sd">        The resize event that triggered the function call.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method is called automatically by the Qt framework when the widget is resized. It adjusts the font size of</span>
+<span class="sd">    the entry field to fit the available space while maintaining a minimum font size, to ensure that the text is</span>
+<span class="sd">    always legible.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="math_operation"><a class="viewcode-back" href="../documentation.html#documentation.math_operation">[docs]</a><span class="k">def</span> <span class="nf">math_operation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">math_sign</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Complete calculator math operation</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    math_sign : str</span>
+<span class="sd">        The math symbol to currently perform.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    The function performs the operation depending on entry and history status,</span>
+<span class="sd">    using the symbol from the parameter. It chooses between the unary operand</span>
+<span class="sd">    and binary operand and performs the calculation</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="add_history"><a class="viewcode-back" href="../documentation.html#documentation.add_history">[docs]</a><span class="k">def</span> <span class="nf">add_history</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">math_sign</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adds the current entry and the math sign to the history widget.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    math_sign : str</span>
+<span class="sd">        The math symbol to add to the history.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Description:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    This method adds the current entry and the math sign to the history widget, clearing the entry afterwards.</span>
+<span class="sd">    If the history widget is empty or the last operation performed was an equality operation, it creates a new</span>
+<span class="sd">    history string using the current entry and the math symbol. It replaces the dot with a comma for localization.</span>
+<span class="sd">    Finally, it sets the text of the history widget to the new string and sets the entry text to &quot;0&quot;.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, DenysChernenko.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -351,7 +351,7 @@ class Calculator(QMainWindow):
                 pass
 
 
-    def math_operation(self, math_sign: str):
+    def math_opperation(self, math_sign: str):
         temp = self.ui.history.text()
         number = self.get_entry_number()
         history_to_check = self.ui.history.text()

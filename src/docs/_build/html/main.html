@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>main module &mdash; Documentation  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">main module</a><ul>
+<li><a class="reference internal" href="#main.Calculator"><code class="docutils literal notranslate"><span class="pre">Calculator</span></code></a><ul>
+<li><a class="reference internal" href="#main.Calculator.add_history"><code class="docutils literal notranslate"><span class="pre">Calculator.add_history()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.add_number"><code class="docutils literal notranslate"><span class="pre">Calculator.add_number()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.add_point"><code class="docutils literal notranslate"><span class="pre">Calculator.add_point()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.adjust_entry_font_size"><code class="docutils literal notranslate"><span class="pre">Calculator.adjust_entry_font_size()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.backspace"><code class="docutils literal notranslate"><span class="pre">Calculator.backspace()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.binary_calculate"><code class="docutils literal notranslate"><span class="pre">Calculator.binary_calculate()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.change_buttons_color"><code class="docutils literal notranslate"><span class="pre">Calculator.change_buttons_color()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.change_sign"><code class="docutils literal notranslate"><span class="pre">Calculator.change_sign()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.clear_all"><code class="docutils literal notranslate"><span class="pre">Calculator.clear_all()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.clear_entry"><code class="docutils literal notranslate"><span class="pre">Calculator.clear_entry()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.clear_history_if_equality"><code class="docutils literal notranslate"><span class="pre">Calculator.clear_history_if_equality()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.disable_buttons"><code class="docutils literal notranslate"><span class="pre">Calculator.disable_buttons()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.get_entry_number"><code class="docutils literal notranslate"><span class="pre">Calculator.get_entry_number()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.get_entry_text_width"><code class="docutils literal notranslate"><span class="pre">Calculator.get_entry_text_width()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.get_history_number"><code class="docutils literal notranslate"><span class="pre">Calculator.get_history_number()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.get_history_sign"><code class="docutils literal notranslate"><span class="pre">Calculator.get_history_sign()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.get_history_text_width"><code class="docutils literal notranslate"><span class="pre">Calculator.get_history_text_width()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.math_opperation"><code class="docutils literal notranslate"><span class="pre">Calculator.math_opperation()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.print_key_event"><code class="docutils literal notranslate"><span class="pre">Calculator.print_key_event()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.register_keyboard_event"><code class="docutils literal notranslate"><span class="pre">Calculator.register_keyboard_event()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.remove_error"><code class="docutils literal notranslate"><span class="pre">Calculator.remove_error()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.remove_trailing_zeroes"><code class="docutils literal notranslate"><span class="pre">Calculator.remove_trailing_zeroes()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.resizeEvent"><code class="docutils literal notranslate"><span class="pre">Calculator.resizeEvent()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.return_buttons_color"><code class="docutils literal notranslate"><span class="pre">Calculator.return_buttons_color()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.show_error"><code class="docutils literal notranslate"><span class="pre">Calculator.show_error()</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">Calculator.staticMetaObject</span></code></a></li>
+<li><a class="reference internal" href="#main.Calculator.unary_calculate"><code class="docutils literal notranslate"><span class="pre">Calculator.unary_calculate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">main module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/main.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-main">
+<span id="main-module"></span><h1>main module<a class="headerlink" href="#module-main" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="main.Calculator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">Calculator</span></span><a class="reference internal" href="_modules/main.html#Calculator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QMainWindow</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.add_history">
+<span class="sig-name descname"><span class="pre">add_history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">math_sign</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main.html#Calculator.add_history"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.add_history" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.add_number">
+<span class="sig-name descname"><span class="pre">add_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Button_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.add_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.add_number" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.add_point">
+<span class="sig-name descname"><span class="pre">add_point</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.add_point"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.add_point" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.adjust_entry_font_size">
+<span class="sig-name descname"><span class="pre">adjust_entry_font_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.adjust_entry_font_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.adjust_entry_font_size" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.backspace">
+<span class="sig-name descname"><span class="pre">backspace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.backspace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.backspace" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.binary_calculate">
+<span class="sig-name descname"><span class="pre">binary_calculate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.binary_calculate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.binary_calculate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.change_buttons_color">
+<span class="sig-name descname"><span class="pre">change_buttons_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">css_color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.change_buttons_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.change_buttons_color" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.change_sign">
+<span class="sig-name descname"><span class="pre">change_sign</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main.html#Calculator.change_sign"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.change_sign" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.clear_all">
+<span class="sig-name descname"><span class="pre">clear_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.clear_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.clear_all" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.clear_entry">
+<span class="sig-name descname"><span class="pre">clear_entry</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.clear_entry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.clear_entry" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.clear_history_if_equality">
+<span class="sig-name descname"><span class="pre">clear_history_if_equality</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.clear_history_if_equality"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.clear_history_if_equality" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.disable_buttons">
+<span class="sig-name descname"><span class="pre">disable_buttons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.disable_buttons"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.disable_buttons" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.get_entry_number">
+<span class="sig-name descname"><span class="pre">get_entry_number</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.get_entry_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.get_entry_number" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.get_entry_text_width">
+<span class="sig-name descname"><span class="pre">get_entry_text_width</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.get_entry_text_width"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.get_entry_text_width" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.get_history_number">
+<span class="sig-name descname"><span class="pre">get_history_number</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.get_history_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.get_history_number" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.get_history_sign">
+<span class="sig-name descname"><span class="pre">get_history_sign</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.get_history_sign"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.get_history_sign" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.get_history_text_width">
+<span class="sig-name descname"><span class="pre">get_history_text_width</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.get_history_text_width"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.get_history_text_width" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.math_opperation">
+<span class="sig-name descname"><span class="pre">math_opperation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">math_sign</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main.html#Calculator.math_opperation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.math_opperation" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.print_key_event">
+<span class="sig-name descname"><span class="pre">print_key_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.print_key_event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.print_key_event" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.register_keyboard_event">
+<span class="sig-name descname"><span class="pre">register_keyboard_event</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main.html#Calculator.register_keyboard_event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.register_keyboard_event" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.remove_error">
+<span class="sig-name descname"><span class="pre">remove_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.remove_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.remove_error" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.remove_trailing_zeroes">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remove_trailing_zeroes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.remove_trailing_zeroes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.remove_trailing_zeroes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.resizeEvent">
+<span class="sig-name descname"><span class="pre">resizeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtGui.QResizeEvent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.resizeEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.resizeEvent" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.return_buttons_color">
+<span class="sig-name descname"><span class="pre">return_buttons_color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.return_buttons_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.return_buttons_color" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.show_error">
+<span class="sig-name descname"><span class="pre">show_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.show_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.show_error" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main.Calculator.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;Calculator&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QMainWindow&quot;:</span> <span class="pre">)</span></em><a class="headerlink" href="#main.Calculator.staticMetaObject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Calculator.unary_calculate">
+<span class="sig-name descname"><span class="pre">unary_calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">math_sign</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/main.html#Calculator.unary_calculate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#main.Calculator.unary_calculate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, DenysChernenko.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
