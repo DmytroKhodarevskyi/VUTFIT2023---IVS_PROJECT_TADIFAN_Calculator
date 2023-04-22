@@ -77,7 +77,6 @@
 <span class="kn">import</span> <span class="nn">keyboard</span>
 <span class="kn">import</span> <span class="nn">Calc_Library</span> <span class="k">as</span> <span class="nn">cl</span>
 <span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">documentation</span>
 
 <span class="n">operations_binary</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;+&quot;</span><span class="p">:</span> <span class="n">cl</span><span class="o">.</span><span class="n">Plus</span><span class="p">,</span>
@@ -408,7 +407,7 @@
                 <span class="k">pass</span></div>
 
 
-<div class="viewcode-block" id="Calculator.math_operation"><a class="viewcode-back" href="../main.html#main.Calculator.math_operation">[docs]</a>    <span class="k">def</span> <span class="nf">math_operation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">math_sign</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<div class="viewcode-block" id="Calculator.math_opperation"><a class="viewcode-back" href="../main.html#main.Calculator.math_opperation">[docs]</a>    <span class="k">def</span> <span class="nf">math_opperation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">math_sign</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="n">temp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
         <span class="n">number</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_entry_number</span><span class="p">()</span>
         <span class="n">history_to_check</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">history</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
