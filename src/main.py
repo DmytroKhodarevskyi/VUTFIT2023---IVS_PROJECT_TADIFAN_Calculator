@@ -265,7 +265,6 @@ class Calculator(QMainWindow):
         return self.ui.history.fontMetrics().boundingRect(self.ui.history.text()).width()
 
     def binary_calculate(self) -> Optional[str]:
-        print("binary calculate")
         entry = self.ui.entry.text()
         temp = self.ui.history.text()
         if temp:
@@ -280,9 +279,7 @@ class Calculator(QMainWindow):
                 self.ui.entry.setText(result)
                 self.adjust_entry_font_size()
                 if result == "error":
-                    # self.ui.history.clear()
                     self.disable_buttons(1)
-                    # self.show_error(error_undifined)
                 return result
 
             except KeyError:
@@ -297,12 +294,9 @@ class Calculator(QMainWindow):
     def unary_calculate(self, math_sign) -> Optional[str]:
         entry = self.ui.entry.text()
         temp = self.ui.history.text()
-
-        # print(math_sign)
         if temp:
             try:
                 print_entry = self.get_entry_number()
-                # print(str(print_entry) + " print entry")
                 result = self.remove_trailing_zeroes(
                     str(operations_unary[math_sign](self.get_entry_number()))
                 )
@@ -312,11 +306,6 @@ class Calculator(QMainWindow):
                 history = temp + " " + self.remove_trailing_zeroes(entry) + " ="
                 history = history.replace(".", ",")
                 if math_sign == ' √' or math_sign == ' !':
-                    # self.ui.history.setText(history + " " + result)
-
-
-                    # print("temp" + temp)
-
                     self.ui.history.setText(temp)
                     unary_symbols = [' √', ' !']
                     for symbol in unary_symbols:
@@ -343,7 +332,6 @@ class Calculator(QMainWindow):
                     self.adjust_entry_font_size()
                     return result
                 else:
-                    # print("else")
                     self.ui.history.setText(history)
                     self.ui.entry.setText(result)
                     self.adjust_entry_font_size()
@@ -354,13 +342,10 @@ class Calculator(QMainWindow):
         else:
             try:
                 result = self.remove_trailing_zeroes(str(operations_unary[math_sign](self.get_entry_number())))
-                # print(result + " result")
                 if result == "error":
-                    # self.ui.history.clear()
                     self.disable_buttons(1)
                 return result
             except KeyError:
-                # print("key error")
                 pass
 
 
@@ -368,13 +353,9 @@ class Calculator(QMainWindow):
         temp = self.ui.history.text()
         number = self.get_entry_number()
         history_to_check = self.ui.history.text()
-        # print("temp to check" + temp)
         if not temp:
-            # print(math_sign + " first")
             if math_sign == ' √' or math_sign == ' !':
-                # print(math_sign + " unary")
                 self.ui.entry.setText(str(self.unary_calculate(math_sign)))
-                # print(self.ui.entry.text() + " entryadwd")
                 self.adjust_entry_font_size()
                 if math_sign == ' √':
                     self.ui.history.setText(f'{math_sign}' + str(number) + " ")
@@ -384,91 +365,41 @@ class Calculator(QMainWindow):
                 self.add_history(math_sign)
         else:
             if math_sign == ' √' or math_sign == ' !':
-                # print(math_sign + " unary")
                 self.ui.entry.setText(str(self.unary_calculate(math_sign)))
-                # print(hist + " history")
             if self.get_history_sign() != math_sign:
                 if self.get_history_sign() == '=':
                     self.add_history(math_sign)
                 else:
                     symbols = ['!', '√']
-                    # print(temp + " temp")
-                    # print(history_to_check + " history to check")
                     for symbol in symbols:
                         if symbol in history_to_check.replace(" ", ""):
-                        # if symbol in history_to_check.replace(" ", ""):
-                        # print(symbol + " symbol")
-
-                        # if ord(symbol) == ord(history_to_check.replace(" ", "")[0]):
-                        #     print("unary symbol detected")
-                        #     print("unary symbol detected")
-                        #     print(self.ui.history.text() + " historyy")
-                        #     print(self.ui.entry.text() + " entryy")
-                            # print(entry + " entryeal")
-                            # entry = self.ui.entry.text()
                             if math_sign != ' √' and math_sign != ' !': #  √
                                 if "!" in history_to_check:
-                                    print("suka")
-                                    # if self.ui.entry.text() == "0":
-
                                     entry = self.ui.entry.text()
-                                    # self.ui.entry.setText("0")
-                                    # break
                                 self.ui.history.setText(str(entry) + f'{math_sign}' + " ")
-                                # if math_sign == ' √':
-                                #     self.ui.history.setText(f'{math_sign}' + self.ui.entry.text())
-                                # else:
-                                #     self.ui.history.setText(self.ui.entry.text() + f'{math_sign}')
                                 history_to_check = self.ui.history.text()
-                                # print(history_to_check + " history to check")
-                                # symbols = ['!', '√']
                                 for symbol in symbols:
                                     if symbol in history_to_check:
-                                        # print("0 result set")
                                         self.ui.entry.setText("0")
                                         break
-                                # print("aboba")
                                 if (math_sign != ' √' and math_sign != ' !'):
                                     self.ui.entry.setText("0")
-                            else:
-                                print("aboba 2")
-                                # self.ui.history.setText(self.binary_calculate() + f'{math_sign}')
-
                         else:
                             prev = self.ui.history.text()
                             entry = self.ui.entry.text()
-                            # print(prev + " previiii")
-                            # print(entry + " entry")
-                            # history_to_check = self.ui.history.text()
-
                             if "!" not in self.ui.history.text():
                                 self.ui.history.setText(prev)
-                            # self.ui.entry.setText(entry + f'{math_sign}')
-                            # self.ui.history.setText(entry + f'{math_sign}')
-                            # print(self.ui.history.text() + " history")
-
                             symbols = ['!', '√']
                             reset = True
-                            # print(history_to_check + " history to check")
-                            # print(temp + " tempaaaaa")
                             test_entry = self.ui.entry.text()
                             test_history = self.ui.history.text()
                             for symbol in symbols:
                                 if symbol in temp:
-                                    # print("0 result set))")
-                                    # self.ui.entry.setText("0")
                                     reset = False
-                                    # break
-
                             if reset:
-                                # print(self.ui.entry.text() + " entry")
-                                # result = self.unary_calculate(math_sign)
                                 self.ui.entry.setText(entry)
                                 self.adjust_entry_font_size()
-                                # break
-                            # self.ui.history.setText(temp[:-2] + " " + f'{math_sign}')
                             else:
-                                # print("0 result set here")
                                 test_math_sign = math_sign
                                 test_temp = temp
                                 if math_sign in temp:
@@ -476,15 +407,6 @@ class Calculator(QMainWindow):
                                     self.adjust_entry_font_size()
                                 else:
                                     self.adjust_entry_font_size()
-                                # break
-                            # print("need to calculate")
-                            # if reset:
-                            #     sign = f'{math_sign}'
-                            #     self.ui.history.setText(temp[:-2] + sign)
-                            # self.ui.entry.setText(str(self._calculate(math_sign)))
-                            # self.ui.history.setText(self.binary_calculate() + f'{math_sign}')
-                            # self.ui.entry.setText("0")
-
             else:
                 self.ui.history.setText(self.binary_calculate() + f'{math_sign}')
 
