@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-
+import main
 def Factorial(n):
     if not isinstance(n, int):
         return "error"
@@ -55,8 +54,7 @@ def Divide(n, p):
     if num_digits > 8:
         x = round(x, 8)
     return x
-=======
-import main
+
 
 def Factorial(n):
     if n == 0:
@@ -81,6 +79,5 @@ def Multiply(n, p):
 
 def Divide(n, p):
     return n / p
->>>>>>> c9845063fc922ad4df007216575131c472bfdb34
 
 
