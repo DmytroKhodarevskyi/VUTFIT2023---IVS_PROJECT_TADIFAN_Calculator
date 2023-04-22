@@ -1,4 +1,4 @@
-Calc\_Library module
+Calc_Library module
 ====================
 
 .. automodule:: Calc_Library

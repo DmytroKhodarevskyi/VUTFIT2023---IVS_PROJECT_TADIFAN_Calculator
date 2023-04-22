@@ -8,6 +8,7 @@ def Factorial(n):
     else:
         return n * Factorial(n - 1)
 
+
 def SquareRoot(n):
     if n < 0:
         return "error"

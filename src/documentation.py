@@ -1,10 +1,161 @@
 
-
-
+"""
+    Math-library and GUI documentation
+    -----------------------------------
+"""
 def __init__():
     """
     @brief Initializes the documentation class.
     @return None
+    """
+
+
+
+def SquareRoot(n):
+    """
+    Returns the square root of a given number.
+
+    Parameters:
+    -----------
+    n : int or float
+     The number to calculate the square root of.
+
+    Returns:
+    --------
+    int or float or str:
+     The square root of the given number if it's non-negative, or 'error' if it's negative.
+
+    Description:
+    ------------
+    This function takes a number as input and returns its square root. If the input is negative, it returns 'error'.
+    """
+
+
+def Power(n,p):
+    """
+    Calculates the value of the first argument raised to the power of the second argument.
+
+    Parameters:
+    -----------
+    n : int or float
+       The base number.
+    p : int or float
+       The exponent number.
+
+    Returns:
+    --------
+    str:
+       The result of the exponentiation in scientific notation
+
+    Description:
+    ------------
+    This function calculates the value of the first argument raised to the power of the second argument.
+    """
+
+
+def Minus(n, p):
+    """
+    Subtracts p from n and returns the result.
+
+    Parameters:
+    -----------
+    n: Union[int, float]
+       The number to be subtracted from.
+    p: Union[int, float]
+       The number to subtract from n.
+
+    Returns:
+    --------
+    Union[int, float]:
+    The result of subtracting p from n.
+
+    Description:
+    ------------
+    This function subtracts the number p from n and returns the result.
+    """
+
+def Plus(n, p):
+    """
+    Add two numbers
+
+    Parameters:
+    -----------
+    n: float
+        The first number to add.
+    p: float
+        The second number to add.
+
+    Returns:
+    --------
+    float
+        The sum of the two numbers
+
+    Description:
+    ------------
+    This function adds the two input numbers, converts the result to a string.
+    """
+
+def Factorial(n):
+    """
+       Calculates the factorial of a given integer.
+
+       Parameters:
+       -----------
+       n : int
+           The integer to calculate the factorial of.
+
+       Returns:
+       --------
+       Union[int, str]:
+       If the input is a positive integer, the function returns the factorial of that integer.
+       If the input is 0, the function returns 1.
+       If the input is not a positive integer, the function returns "error".
+
+       Description:
+       ------------
+       This function calculates the factorial of a given positive integer by multiplying that integer by the
+       factorial of the next smallest positive integer until it reaches 1.
+       """
+
+def Multiply(n, p):
+    """
+        Multiply two numbers and return the result as a string.
+
+        Parameters:
+        -----------
+        n: Union[int, float]
+            The first number to be multiplied.
+        p: Union[int, float]
+            The second number to be multiplied.
+
+        Returns:
+        --------
+        x: int or float
+            A representation of the product of the two numbers.
+
+        Description:
+        ------------
+        This method multiplies two numbers.
+    """
+def Divide(n, p):
+    """
+    Divide two numbers and return the result.
+
+    Parameters:
+    -----------
+    n: float
+        The numerator.
+    p: float
+        The denominator.
+
+    Returns:
+    --------
+    x: int or float
+        If p is zero, returns the string "error". Otherwise, returns the result of dividing n by p.
+
+    Description:
+    ------------
+    This function divides the first input (numerator) by the second input (denominator) and returns the result.
     """
 
 
@@ -150,7 +301,7 @@ def clear_entry(self):
     Parameters:
     -----------
     None
-    
+
     Returns:
     --------
     None
@@ -555,3 +706,8 @@ def add_history(self, math_sign: str):
     history string using the current entry and the math symbol. It replaces the dot with a comma for localization.
     Finally, it sets the text of the history widget to the new string and sets the entry text to "0".
     """
+
+
+
+
+
