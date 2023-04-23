@@ -8,7 +8,7 @@ setup(
     options={
         "build_exe": {
             "include_files": ["Calc_Library.py", "Newdesign.py"],
-            "packages": ["PySide6.QtWidgets", "keyboard", "typing"],
+            "packages": ["PySide6", "decimal", "keyboard", "typing"],
             "include_msvcr": True,
         }
     },
