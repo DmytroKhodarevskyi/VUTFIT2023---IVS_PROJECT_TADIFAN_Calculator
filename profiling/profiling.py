@@ -1,15 +1,26 @@
-# from IVS2_PROJECT_TADIFAN.src import Calc_Library
-# from ..src import Calc_Library
-import os
+#!/usr/bin/env python
 import sys
+import os
 
-parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
+# parent_dir = os.path.abspath(os.path.join(os.path.dirname(file), '../../..'))
+# sys.path.insert(0, parent_dir)
+
+# Get the directory of the current script
+current_dir = os.path.dirname(file)
+
+# Go up one level from the current directory
+parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
+
+# Add the parent directory to the system path
 sys.path.insert(0, parent_dir)
+
 from src import Calc_Library
 
-import cProfile
-import pstats
+#For running the program use the command: 'python profiling.py data.txt'
+#For visualisation information about profiling the program use: 'python -m cProfile profiling.py data.txt'
+#In file data.txt must be numbers
+
 def samplemean(numbers):
     return summs(numbers) / len(numbers)
 def summs(numbers):
@@ -28,16 +39,18 @@ def stddev(numbers):
         s = Calc_Library.SquareRoot(befsq)
         return s
 
-def main():
- numbers = []
- for line in sys.stdin:
-    numbers.extend(map(float, line.strip().split()))
-    result = stddev(numbers)
-    print(result)
 
-if __name__ == '__main__':
-    cwd = os.getcwd()
-    file_path = os.path.join(cwd, 'profile_stats')
-    cProfile.run('main()', file_path)
-    stats = pstats.Stats("profile_stats")
-    stats.sort_stats("tottime").print_stats()
+
+def main():
+    if len(sys.argv) < 2:
+        print("Error: Input file not specified")
+        return
+    filename = sys.argv[1]
+    with open(filename, "r") as f:
+        data = f.read()
+        numbers = [float(x) for x in data.split()]
+    result = stddev(numbers)
+    print("sd =",result)
+
+if name == "main":
+    main()
