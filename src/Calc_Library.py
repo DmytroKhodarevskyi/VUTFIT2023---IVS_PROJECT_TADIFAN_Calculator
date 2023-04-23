@@ -1,4 +1,3 @@
-
 def Factorial(n):
     if not isinstance(n, int):
         return "error"
@@ -8,6 +7,7 @@ def Factorial(n):
         return "error"
     else:
         return n * Factorial(n - 1)
+
 
 def SquareRoot(n):
     if n < 0:
@@ -54,5 +54,6 @@ def Divide(n, p):
     if num_digits > 8:
         x = round(x, 8)
     return x
+
 
 

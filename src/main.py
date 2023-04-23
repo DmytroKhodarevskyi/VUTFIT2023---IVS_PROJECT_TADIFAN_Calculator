@@ -252,6 +252,7 @@ class Calculator(QMainWindow):
         history = self.ui.history.text().strip(',').split()[0]
         history = history.replace(",", ".")
         print(history)
+        print("testtt")
         return float(history) if '.' in history else int(history)
 
     def get_history_sign(self) -> Optional[str]:
@@ -313,6 +314,7 @@ class Calculator(QMainWindow):
                             test = self.ui.entry.text()
                             if self.ui.entry != "0":
                                 if math_sign == ' √':
+                                    test = math_sign + entry
                                     self.ui.history.setText(math_sign + entry)
                                 else:
                                     self.ui.history.setText(entry + math_sign)
@@ -381,9 +383,13 @@ class Calculator(QMainWindow):
                                 for symbol in symbols:
                                     if symbol in history_to_check:
                                         self.ui.entry.setText("0")
+                                        self.adjust_entry_font_size()
+
                                         break
                                 if (math_sign != ' √' and math_sign != ' !'):
                                     self.ui.entry.setText("0")
+                                    self.adjust_entry_font_size()
+
                         else:
                             prev = self.ui.history.text()
                             entry = self.ui.entry.text()
@@ -403,7 +409,7 @@ class Calculator(QMainWindow):
                                 test_math_sign = math_sign
                                 test_temp = temp
                                 if math_sign in temp:
-                                    self.ui.entry.setText("0")
+                                    # self.ui.entry.setText("0")
                                     self.adjust_entry_font_size()
                                 else:
                                     self.adjust_entry_font_size()
