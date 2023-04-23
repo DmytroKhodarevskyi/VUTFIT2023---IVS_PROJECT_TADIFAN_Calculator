@@ -1,16 +1,11 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QGridLayout, QLabel, QLineEdit, QComboBox, QCheckBox, QFileDialog, QProgressBar, QTableWidget, QTableWidgetItem, QHeaderView, QAbstractItemView, QMenu, QAction, QInputDialog, QMessageBox
-from PyQt5.QtCore import Qt, QThread, pyqtSignal, QCoreApplication
-from PyQt5.QtGui import QCursor
 from typing import Union, Optional
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtGui import QFontDatabase
 from Newdesign import Ui_MainWindow
-from operator import add, sub, mul, truediv
 import keyboard
 import Calc_Library as cl
 import decimal
-import time
 
 operations_binary = {
     "+": cl.Plus,
@@ -26,9 +21,6 @@ operations_unary = {
 }
 
 disabled = False
-
-
-
 
 error_zero_division = "You can't divide by zero!"
 error_undifined = "Undefined!"
@@ -87,7 +79,6 @@ class Calculator(QMainWindow):
         self.ui.Button_Factorial.clicked.connect(lambda: self.math_operation(' !'))
 
     def print_key_event(self, event) -> None:
-        # print(event.name)
         pressed = ( "QPushButton {\n"
                     "border-bottom: 2px solid rgb(0, 148, 198);\n"
                     "border-left: 1rem solid rgb(0, 0, 0);\n"
@@ -109,10 +100,6 @@ class Calculator(QMainWindow):
             self.ui.Button_2.click()
         elif event.name == '3':
             self.ui.Button_3.click()
-            # self.ui.Button_3.setStyleSheet(pressed)
-            # time.sleep(0.5)
-            # self.ui.Button_3.setStyleSheet(self.unpressed)
-            # self.ui.Button_3.setShortcut('3')
         elif event.name == '4':
             self.ui.Button_4.click()
         elif event.name == '5':
@@ -120,7 +107,6 @@ class Calculator(QMainWindow):
         elif event.name == '6':
             self.ui.Button_6.click()
         elif event.name == '7':
-            # self.ui.Button_7.clicked.connect(self.add_number("7"))
             self.ui.Button_7.click()
         elif event.name == '8':
             self.ui.Button_8.click()
@@ -135,7 +121,6 @@ class Calculator(QMainWindow):
         elif event.name == '.':
             self.ui.Button_Comma.click()
         elif event.name == '+':
-            print('plus pressed')
             self.ui.Button_Plus.click()
         elif event.name == '-':
             self.ui.Button_Minus.click()
@@ -147,15 +132,9 @@ class Calculator(QMainWindow):
             self.ui.Button_Power.click()
         elif event.name == '!':
             self.ui.Button_Factorial.click()
+        elif event.name == 'S':
+            self.ui.Button_Sign.click()
 
-
-    # keyboard.on_press(lambda event: self.print_key_event(event))
-
-    # def register_keyboard_event(self):
-    #     self.keyboard_hook = keyboard.hook(self.print_key_event)
-    #
-    # def unregister_keyboard_event(self):
-    #     keyboard.unhook(self.keyboard_hook)
     def register_keyboard_event(self):
         keyboard.on_press(lambda event: self.print_key_event(event))
 
@@ -244,7 +223,6 @@ class Calculator(QMainWindow):
     @staticmethod
     def remove_trailing_zeroes(number: str) -> str:
         n = str(number)
-        print(n)
         if n == "Undefined!":
             return n
         n = n.replace(",", ".")
@@ -253,12 +231,9 @@ class Calculator(QMainWindow):
             n = str(n)
         else:
             n = str(decimal.Decimal(n))
-        # return n[:-2] if n.endswith('.0') else n
         n = n.replace(".", ",")
-        print(n)
         n = n.rstrip('0')
         n= n.rstrip(',')
-        print(n)
         return n
 
     def get_entry_number(self) :
@@ -277,10 +252,6 @@ class Calculator(QMainWindow):
     def get_history_number(self) -> Union[int, float, None]:
         history = self.ui.history.text().strip(',').split()[0]
         history = history.replace(",", ".")
-        # print(float(history))
-        # precision_x = decimal.Decimal(history).normalize().as_tuple().exponent
-        # x = self.format_decimal(history, decimal.Decimal('10') ** precision_x)
-        # print(x)
         if float(history) < 0:
             precision_x = decimal.Decimal(history).normalize().as_tuple().exponent
             history = self.format_decimal(history, decimal.Decimal('10') ** precision_x)
@@ -299,22 +270,13 @@ class Calculator(QMainWindow):
     def binary_calculate(self) -> Optional[str]:
         entry = self.ui.entry.text()
         temp = self.ui.history.text()
-        # print(temp)
         if temp:
             try:
-                # print (str(self.get_history_number()) + "\n" + str(self.get_entry_number()))
-                # print(self.get_history_sign())
-
-                # result = self.remove_trailing_zeroes(
-                #     str(operations_binary[self.get_history_sign()](self.get_history_number(), self.get_entry_number()))
-                # )
-                # print(self.get_history_number())
                 result = str(operations_binary[self.get_history_sign()](self.get_history_number(), self.get_entry_number()))
 
                 if ('+' not in result and '-' not in result) or result.startswith("-"):
                     result = self.remove_trailing_zeroes(result)
                     result = result.replace(".", ",")
-                # print(operations_binary[self.get_history_sign()](self.get_history_number(), self.get_entry_number()))
                 if '-' in result or '+' in result:
                     result = result.replace("E", "e")
                 history = temp + " " + self.remove_trailing_zeroes(entry) + " ="
@@ -322,9 +284,7 @@ class Calculator(QMainWindow):
                 self.ui.history.setText(history)
                 self.ui.entry.setText(result)
                 self.adjust_entry_font_size()
-                # print(result)
                 if result == "Undefined!":
-                    # self.disable_buttons(1)
                     self.show_error(error_undifined)
                 return result
 
@@ -342,10 +302,6 @@ class Calculator(QMainWindow):
         temp = self.ui.history.text()
         if temp:
             try:
-                print_entry = self.get_entry_number()
-                # result = self.remove_trailing_zeroes(
-                #     str(operations_unary[math_sign](self.get_entry_number()))
-                # )
                 result = str(operations_unary[math_sign](self.get_entry_number()))
                 if '+' not in result and '-' not in result and '.' in result:
                     result = self.remove_trailing_zeroes(result)
@@ -363,10 +319,8 @@ class Calculator(QMainWindow):
                     unary_symbols = [' √', ' !']
                     for symbol in unary_symbols:
                         if symbol in self.ui.history.text():
-                            test = self.ui.entry.text()
                             if self.ui.entry != "0":
                                 if math_sign == ' √':
-                                    test = math_sign + entry
                                     self.ui.history.setText(math_sign + entry)
                                 else:
                                     self.ui.history.setText(entry + math_sign)
@@ -390,17 +344,13 @@ class Calculator(QMainWindow):
                     self.ui.entry.setText(result)
                     self.adjust_entry_font_size()
                     return result
-
             except KeyError:
                 pass
         else:
             try:
-                # print(math_sign)
                 result = str(operations_unary[math_sign](self.get_entry_number()))
-                # print(result)
                 if '+' not in result and '-' not in result and '.' in result:
                     result = self.remove_trailing_zeroes(result)
-                    # print(result)
                 elif 'E' in result:
                     result = result.replace('E', 'e')
                     result = result.replace(".", ",")
@@ -417,12 +367,10 @@ class Calculator(QMainWindow):
         if '+' in str(number) or '-' in str(number):
             number = str(number).replace(",", ".")
             number = number.replace("e", "E")
-        # print(self.get_entry_number())
         history_to_check = self.ui.history.text()
         if not temp:
             if math_sign == ' √' or math_sign == ' !':
                 self.ui.entry.setText(str(self.unary_calculate(math_sign)))
-                # print(self.ui.entry.text())
                 self.adjust_entry_font_size()
                 if math_sign == ' √':
                     self.ui.history.setText(f'{math_sign}' + str(number) + " ")
@@ -436,13 +384,12 @@ class Calculator(QMainWindow):
                 self.adjust_entry_font_size()
             if self.get_history_sign() != math_sign:
                 if self.get_history_sign() == '=':
-                    print("test")
                     self.add_history(math_sign)
                 else:
                     symbols = ['!', '√']
                     for symbol in symbols:
                         if symbol in history_to_check.replace(" ", ""):
-                            if math_sign != ' √' and math_sign != ' !': #  √
+                            if math_sign != ' √' and math_sign != ' !':
                                 if "!" in history_to_check:
                                     entry = self.ui.entry.text()
                                 self.ui.history.setText(str(entry) + f'{math_sign}' + " ")
@@ -451,7 +398,6 @@ class Calculator(QMainWindow):
                                     if symbol in history_to_check:
                                         self.ui.entry.setText("0")
                                         self.adjust_entry_font_size()
-
                                         break
                                 if (math_sign != ' √' and math_sign != ' !'):
                                     self.ui.entry.setText("0")
@@ -463,8 +409,6 @@ class Calculator(QMainWindow):
                                 self.ui.history.setText(prev)
                             symbols = ['!', '√']
                             reset = True
-                            test_entry = self.ui.entry.text()
-                            test_history = self.ui.history.text()
                             for symbol in symbols:
                                 if symbol in temp:
                                     reset = False
@@ -472,13 +416,7 @@ class Calculator(QMainWindow):
                                 self.ui.entry.setText(entry)
                                 self.adjust_entry_font_size()
                             else:
-                                test_math_sign = math_sign
-                                test_temp = temp
-                                if math_sign in temp:
-                                    #self.ui.entry.setText("0")
-                                    self.adjust_entry_font_size()
-                                else:
-                                    self.adjust_entry_font_size()
+                                self.adjust_entry_font_size()
             else:
                 self.ui.history.setText(self.binary_calculate() + f'{math_sign}')
 
@@ -490,7 +428,6 @@ class Calculator(QMainWindow):
         self.disable_buttons(True)
 
     def remove_error(self) -> None:
-        #print("remove_error")
         if self.ui.entry.text() in (error_undifined, error_zero_division, error_overflow):
             self.ui.entry.setMaxLength(self.entry_max_length)
             self.ui.entry.setText("0")
@@ -559,10 +496,8 @@ class Calculator(QMainWindow):
         font_size = 1
         while self.get_entry_text_width() < self.ui.entry.width() - 20:
             font_size += 1
-
             if font_size > default_entry_font_size:
                 break
-
             self.ui.entry.setStyleSheet('font-size: ' + str(font_size) + 'pt; '
                                                                          'background-color: rgb(30, 30, 30); '
                                                                          'border: none; '
@@ -570,9 +505,6 @@ class Calculator(QMainWindow):
 
     def resizeEvent(self, event) -> None:
         self.adjust_entry_font_size()
-
-# calc = Calculator()
-# calc.register_keyboard_event()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
