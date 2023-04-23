@@ -20,6 +20,7 @@ from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QLabel,
     QVBoxLayout, QWidget)
 import files_rc
 
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
@@ -81,7 +82,7 @@ class Ui_MainWindow(object):
 "border: none;\n"
 "border-radius: 10px;\n"
 "   ")
-        self.entry.setMaxLength(16)
+        self.entry.setMaxLength(35)
         self.entry.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
         self.entry.setReadOnly(True)
 
