@@ -134,6 +134,8 @@ class Calculator(QMainWindow):
             self.ui.Button_Factorial.click()
         elif event.name == 'S':
             self.ui.Button_Sign.click()
+        elif event.name == 's':
+            self.ui.Button_Root.click()
 
     def register_keyboard_event(self):
         keyboard.on_press(lambda event: self.print_key_event(event))
