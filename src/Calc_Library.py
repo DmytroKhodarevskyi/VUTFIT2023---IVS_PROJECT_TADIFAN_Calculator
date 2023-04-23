@@ -1,9 +1,10 @@
 import decimal
+from decimal import Decimal
 import sys
 sys.setrecursionlimit(3207)  # Increase recursion depth limit to 10000
 
 def Factorial(n):
-    if decimal.Decimal(n) > 3200:
+    if Decimal(n) > 3200:
         return "Overflow!"
     if not isinstance(n, int):
         return "Undefined!"
@@ -13,7 +14,7 @@ def Factorial(n):
         return "Undefined!"
 
     try:
-        result = decimal.Decimal(n) * Factorial(n - 1)
+        result = Decimal(n) * Factorial(n - 1)
         return result
     except RecursionError:
         return "Overflow!"
@@ -21,44 +22,57 @@ def Factorial(n):
 def SquareRoot(n):
     if n < 0:
         return "Undefined!"
-    return float(n) ** 0.5
+    x = Decimal(str(n)) ** Decimal('0.5')
+    return x
 
 def Power(n, p):
     # number = decimal.Decimal(n) ** p
     # number_str = format(number, '0.10E').replace('E', 'e')
-    number = float(n) ** float(p)
-    number_str = str(number)
-    number_digits = len(number_str)
+    #
+    n = Decimal(str(n))
+    p = Decimal(str(p))
+    if n == decimal.Decimal('0') and decimal.Decimal('0') == p:
+        return decimal.Decimal('1')
+    number = n ** p
+    # number_str = str(number)
+    # number_digits = len(number_str)
     # if number_digits > 8 and '+' not in number_str:
     #     number = round(number, 8)
     return number
 
 def Plus(n, p):
-    x = decimal.Decimal(n) + decimal.Decimal(p)
+
+    n = Decimal(str(n))
+    p = Decimal(str(p))
+    x = n + p
     # x = float(n) + float(p)
     # x = "{:.7e}".format(x)
-    num_str = str(x)
     # num_str = str(x)
-    num_digits = len(num_str)
-    if num_digits > 8 and '+' not in num_str:
-        x = round(x, 5)
+    # num_str = str(x)
+    # num_digits = len(num_str)
+    # if num_digits > 8 and '+' not in num_str and ('-' not in num_str or num_str[0] == '-'):
+    #     x = round(x, 3)
     return x
 
 def Minus(n, p):
-    x = decimal.Decimal(n) - decimal.Decimal(p)
-    num_str = str(x)
-    num_digits = len(num_str)
-    if num_digits > 8 and '+' not in num_str:
-        x = round(x, 5)
+    n = Decimal(str(n))
+    p = Decimal(str(p))
+    x = n - p
+    # num_str = str(x)
+    # num_digits = len(num_str)
+    # if num_digits > 8 and '+' not in num_str:
+    #     x = round(x, 3)
     return x
 
 def Multiply(n, p):
-    x = decimal.Decimal(n) * decimal.Decimal(p)
+    n = Decimal(str(n))
+    p = Decimal(str(p))
     # x = float(n) * float(p)
-    num_str = str(x)
-    num_digits = len(num_str)
-    if num_digits > 8 and '+' not in num_str:
-        x = round(x, 3)
+    # num_str = str(x)
+    # num_digits = len(num_str)
+    # if num_digits > 16 and '+' not in num_str:
+    #     x = round(x, 30)
+    x = n * p
     return x
 
 def Divide(n, p):
