@@ -310,8 +310,9 @@ class Calculator(QMainWindow):
                 # )
                 # print(self.get_history_number())
                 result = str(operations_binary[self.get_history_sign()](self.get_history_number(), self.get_entry_number()))
-
-                if ('+' not in result and '-' not in result) or result.startswith("-"):
+                if result == "Overflow!":
+                    self.show_error(error_overflow)
+                if (('+' not in result and '-' not in result) or result.startswith("-")) and result != "Overflow!":
                     result = self.remove_trailing_zeroes(result)
                     result = result.replace(".", ",")
                 # print(operations_binary[self.get_history_sign()](self.get_history_number(), self.get_entry_number()))
