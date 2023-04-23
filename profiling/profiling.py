@@ -1,10 +1,20 @@
 #!/usr/bin/env python
 import sys
 import os
-import time
 
-parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+# parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..'))
+# sys.path.insert(0, parent_dir)
+
+# Get the directory of the current script
+current_dir = os.path.dirname(__file__)
+
+# Go up one level from the current directory
+parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
+
+# Add the parent directory to the system path
 sys.path.insert(0, parent_dir)
+
 from src import Calc_Library
 
 #For running the program use the command: 'python profiling.py data.txt'
@@ -20,7 +30,6 @@ def summs(numbers):
     return summ
 
 def stddev(numbers):
-        time.sleep(2)
         x_sample = samplemean(numbers)
         minus = [Calc_Library.Minus(x, x_sample) for x in numbers]
         sqrt = [Calc_Library.Power(d, 2) for d in minus]
@@ -44,4 +53,3 @@ def main():
     print("sd =",result)
 if __name__ == "__main__":
     main()
-
