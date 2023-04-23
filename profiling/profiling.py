@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 import sys
 import os
-import time
 
-parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..'))
 sys.path.insert(0, parent_dir)
 from src import Calc_Library
 
@@ -20,7 +20,6 @@ def summs(numbers):
     return summ
 
 def stddev(numbers):
-        time.sleep(2)
         x_sample = samplemean(numbers)
         minus = [Calc_Library.Minus(x, x_sample) for x in numbers]
         sqrt = [Calc_Library.Power(d, 2) for d in minus]
@@ -44,4 +43,3 @@ def main():
     print("sd =",result)
 if __name__ == "__main__":
     main()
-
