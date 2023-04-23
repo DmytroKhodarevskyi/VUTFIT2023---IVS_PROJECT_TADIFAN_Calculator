@@ -1,15 +1,11 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QGridLayout, QLabel, QLineEdit, QComboBox, QCheckBox, QFileDialog, QProgressBar, QTableWidget, QTableWidgetItem, QHeaderView, QAbstractItemView, QMenu, QAction, QInputDialog, QMessageBox
-from PyQt5.QtCore import Qt, QThread, pyqtSignal, QCoreApplication
-from PyQt5.QtGui import QCursor
+
 from typing import Union, Optional
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtGui import QFontDatabase
 from Newdesign import Ui_MainWindow
-from operator import add, sub, mul, truediv
 import keyboard
 import Calc_Library as cl
-import time
 
 operations_binary = {
     "+": cl.Plus,
