@@ -1,6 +1,6 @@
 import decimal
 import sys
-sys.setrecursionlimit(3206)  # Increase recursion depth limit to 10000
+sys.setrecursionlimit(3207)  # Increase recursion depth limit to 10000
 
 def Factorial(n):
     if decimal.Decimal(n) > 3200:
