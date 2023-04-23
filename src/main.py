@@ -50,6 +50,8 @@ class Calculator(QMainWindow):
         self.unpressed = self.ui.Button_1.styleSheet()
 
         self.style_sheet_for_enable = self.ui.Button_Divide.styleSheet()
+        self.style_sheet_for_enable_Sign = self.ui.Button_Sign.styleSheet()
+        self.style_sheet_for_enable_Comma = self.ui.Button_Comma.styleSheet()
         self.nums_style_sheet = self.ui.Button_0.styleSheet()
         self.equal_style_sheet = self.ui.Button_Equal.styleSheet()
         self.sign_style_sheet = self.ui.Button_Sign.styleSheet()
@@ -231,7 +233,7 @@ class Calculator(QMainWindow):
        if not self.ui.history.text() or self.get_history_sign() == '=':
            # history = self.remove_trailing_zeroes(self.ui.entry.text()) + f'{math_sign}'
            history = self.ui.entry.text()
-           if '+' not in history and '-' not in history:
+           if '+' not in history and '-' not in history and '.' in history:
                history = self.remove_trailing_zeroes(history)
            history += f'{math_sign}'
            history = history.replace(".", ",")
@@ -242,11 +244,22 @@ class Calculator(QMainWindow):
     @staticmethod
     def remove_trailing_zeroes(number: str) -> str:
         n = str(number)
+        print(n)
         if n == "Undefined!":
             return n
         n = n.replace(",", ".")
-        n = str(float(n))
-        return n[:-2] if n.endswith('.0') else n
+        if len(n) <= 18:
+            n = (float(n))
+            n = str(n)
+        else:
+            n = str(decimal.Decimal(n))
+        # return n[:-2] if n.endswith('.0') else n
+        n = n.replace(".", ",")
+        print(n)
+        n = n.rstrip('0')
+        n= n.rstrip(',')
+        print(n)
+        return n
 
     def get_entry_number(self) :
         temp = self.ui.history.text()
@@ -295,7 +308,7 @@ class Calculator(QMainWindow):
                 # result = self.remove_trailing_zeroes(
                 #     str(operations_binary[self.get_history_sign()](self.get_history_number(), self.get_entry_number()))
                 # )
-                print(self.get_history_number())
+                # print(self.get_history_number())
                 result = str(operations_binary[self.get_history_sign()](self.get_history_number(), self.get_entry_number()))
 
                 if ('+' not in result and '-' not in result) or result.startswith("-"):
@@ -383,13 +396,13 @@ class Calculator(QMainWindow):
             try:
                 # print(math_sign)
                 result = str(operations_unary[math_sign](self.get_entry_number()))
-                print(result)
+                # print(result)
                 if '+' not in result and '-' not in result and '.' in result:
                     result = self.remove_trailing_zeroes(result)
+                    # print(result)
                 elif 'E' in result:
                     result = result.replace('E', 'e')
                     result = result.replace(".", ",")
-                print(result)
                 if result == "Undefined!":
                     self.show_error(error_undifined)
                 elif result == "Overflow!":
@@ -425,7 +438,6 @@ class Calculator(QMainWindow):
                     print("test")
                     self.add_history(math_sign)
                 else:
-
                     symbols = ['!', '√']
                     for symbol in symbols:
                         if symbol in history_to_check.replace(" ", ""):
@@ -489,10 +501,11 @@ class Calculator(QMainWindow):
         self.ui.Button_Minus.setDisabled(disable)
         self.ui.Button_Multiply.setDisabled(disable)
         self.ui.Button_Divide.setDisabled(disable)
-        # self.ui.Button_Comma.setDisabled(disable)
+        self.ui.Button_Comma.setDisabled(disable)
         self.ui.Button_Factorial.setDisabled(disable)
         self.ui.Button_Root.setDisabled(disable)
         self.ui.Button_Power.setDisabled(disable)
+        self.ui.Button_Sign.setDisabled(disable)
 
         if disable:
             color =("border-bottom: 2px solid rgb(0, 148, 198);"
@@ -516,7 +529,8 @@ class Calculator(QMainWindow):
         self.ui.Button_Factorial.setStyleSheet(css_color)
         self.ui.Button_Root.setStyleSheet(css_color)
         self.ui.Button_Power.setStyleSheet(css_color)
-        # self.ui.Button_Comma.setStyleSheet(css_color)
+        self.ui.Button_Comma.setStyleSheet(css_color)
+        self.ui.Button_Sign.setStyleSheet(css_color)
 
     def return_buttons_color(self) -> None:
         self.ui.Button_Equal.setStyleSheet(self.style_sheet_for_enable)
@@ -527,7 +541,8 @@ class Calculator(QMainWindow):
         self.ui.Button_Factorial.setStyleSheet(self.style_sheet_for_enable)
         self.ui.Button_Root.setStyleSheet(self.style_sheet_for_enable)
         self.ui.Button_Power.setStyleSheet(self.style_sheet_for_enable)
-        # self.ui.Button_Comma.setStyleSheet(self.style_sheet_for_enable)
+        self.ui.Button_Comma.setStyleSheet(self.style_sheet_for_enable_Comma)
+        self.ui.Button_Sign.setStyleSheet(self.style_sheet_for_enable_Sign)
 
     def adjust_entry_font_size(self) -> None:
         font_size = default_entry_font_size
