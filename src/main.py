@@ -404,6 +404,8 @@ class Calculator(QMainWindow):
                                         break
                                 if (math_sign != ' √' and math_sign != ' !'):
                                     self.ui.entry.setText("0")
+                                    self.adjust_entry_font_size()
+
 
                         else:
                             prev = self.ui.history.text()
