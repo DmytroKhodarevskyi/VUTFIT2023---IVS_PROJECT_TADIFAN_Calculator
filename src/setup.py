@@ -8,7 +8,8 @@ setup(
     options={
         "build_exe": {
             "include_files": ["Calc_Library.py", "Newdesign.py", "docs", "icons", "Rubik", "files_rc.py"],
-            "packages": ["PySide6", "keyboard", "typing", "decimal", "importlib", "sys", "os"],
+            "packages": ["PySide6", "keyboard", "typing", "decimal", "importlib", "sys",
+                         "os", "math"],
             "include_msvcr": True,
         }
     },
