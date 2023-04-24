@@ -7,7 +7,7 @@ Graphical User Interface / GUI mockup / GUI linkage
 4. Yaroslav Hryn “xhryny00”
 User guide / GIT control / Installer-Uninstaller
 
-Actual: (for now)
+Actual:
 1. Dmytro Trifonov “xtrifo00”
 GUI / GUI linkage / Mockup / Main Calculator Programming
 2. Dmytro Khodarevskyi “xkhoda01”
