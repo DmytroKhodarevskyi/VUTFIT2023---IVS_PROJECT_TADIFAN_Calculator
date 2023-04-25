@@ -18,7 +18,18 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QVBoxLayout, QWidget)
-import files_rc
+# import files_rc
+import importlib.util
+
+# Load the module from the specified file path
+spec = importlib.util.spec_from_file_location("files_rc", "files_rc.py")
+files_rc = importlib.util.module_from_spec(spec)
+with open(spec.origin, "rb") as f:
+    code = f.read()
+code = code.replace(b'\x00', b'')  # remove null bytes
+exec(compile(code, spec.origin, "exec"), files_rc.__dict__)
+
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -81,7 +92,7 @@ class Ui_MainWindow(object):
 "border: none;\n"
 "border-radius: 10px;\n"
 "   ")
-        self.entry.setMaxLength(16)
+        self.entry.setMaxLength(35)
         self.entry.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
         self.entry.setReadOnly(True)
 

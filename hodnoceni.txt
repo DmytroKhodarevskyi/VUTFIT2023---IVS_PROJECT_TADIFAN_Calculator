@@ -1,4 +1,4 @@
-xlogin01 100 (základ GUI a základní mat. operace)
-xlogin02 100 (pokročilé mat. operace)
-xlogin03 90 (profiling, instalátor)
-xlogin04 110 (testy, dokumentace)
+xtrifo00 100 (GUI / GUI linkage / Mockup / Main Calculator Programming)
+xkhoda01 100 (GIT control / Math library / GUI / Documentation / Main Calculator Programming)
+xchern08 100 (Tests / Pair programming / Documentation)
+xhryny00 100 (Installer-Uninstaller / Profiling+Profiling Documentation / Documentation / User guide)
