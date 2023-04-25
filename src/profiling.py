@@ -15,8 +15,12 @@ parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
 # Add the parent directory to the system path
 sys.path.insert(0, parent_dir)
 
-from src import Calc_Library
+#from src import Calc_Library
+#If you have the script inside th src folder, you can use the line below instead of the previous one
+#If you have profiling inside the profiling folder, you can use the line above
+import Calc_Library
 
+#data.txt must be in the same folder as the script, which contains numbers followed by newlines
 #For running the program use the command: 'python profiling.py data.txt'
 #For visualisation information about profiling the program use: 'python -m cProfile profiling.py data.txt'
 #In file data.txt must be numbers
